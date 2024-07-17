@@ -1,5 +1,15 @@
 from datetime import datetime
 Tasks = ["email", "phone", "chat","Supervisor","Dispatch","Training","lunch"]
+SQL_training_schedule = {}
+training_template = [
+
+    ["First Day (onboarding)","Canvas Week 1 Training"],
+    ["Canvas Week 2 Training" "Canvas Week 3 Training"],
+    ["Emails"],
+    ["Chat Shadowing", "Chat coaching"],
+    ["Call Shadowing", "Call Coaching"]
+
+    ]
 
 class DaySchedule:
     """
@@ -26,4 +36,13 @@ class Task:
         self.start_time = start_time
         self.end_time = end_time
         self.task_type = task_type
+
+def create_Training_Schedule(trainee, start_day: datetime, week_schedule):
+    curr_training_day = start_day
+    SQL_training_schedule.update(curr_training_day,trainee)
+
+    num_Of_Training_weeks = 5
+ 
+    SQL_training_schedule.update(curr_training_day,trainee,)
+
 

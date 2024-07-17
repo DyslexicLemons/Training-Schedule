@@ -2,51 +2,24 @@ import requests     # Http request library for python
 import psycopg2     # PostgreSQL library for Python
 
 consultants = {}
-trainers = {}
-trainees = {}
+SQL_database = {}
 
 
-
-class Supervisor:
-    def __init__(self, first_name):
-        self.first_name = first_name
-
-    def __init__(self, username, first_name, last_name, week_schedule, training_team:bool):
-        self.username = username
-        self.first_name = first_name
-        self.last_name = last_name
-        self.week_schedule = week_schedule
-        self.training_team = training_team
-
-class Consultant:
-    def __init__(self, first_name):
-        self.first_name=first_name
-        
-    def __init__(self, username, first_name, last_name, week_schedule, trainer:bool):
-        self.username = username
-        self.first_name = first_name
-        self.last_name = last_name
-        self.week_schedule = week_schedule
-        self.trainer = trainer
-
-class Trainee:
-    def __init__(self, username, first_name, last_name, week_schedule, trainer:bool, training_calendar):
-        super().__init__(username, first_name, last_name, week_schedule, trainer)
-        self.training_calendar = training_calendar
-
-
-
-
-
-def get_consultants():
+def get_new_employees():    # NEEDS UPDATED for SQL database once implemented
     """
-    Grabs consultants schedule information using PIE and intitializes them as Consultant or Trainee
+    Grabs employee information from PIE andd adds any new employees into PIE
     """
-    
-    new_consultant = Consultant()
-    username = ""
-    consultants[username] = new_consultant
-def get_supervisors():
+
+    employee_data = {} # employee dictionary obtained using PIE data
+    for employee in employee_data:
+        if employee['username'] not in SQL_database:
+            insert_employee(employee_data['username'])
+        else:
+            if employee['position'] != SQL_database[employee['position']]:
+                SQL_database.update(employee['position'])      
+
+def insert_employee(employee_data):
     """
-    Grabs Supervisors schedule information using PIE and intitializes them as Supervisor
+    Inserts new employee into the PSQL database
     """
+    SQL_database.update(employee_data)
