@@ -4,6 +4,7 @@ import psycopg2                                 # PostgreSQL library for Python
 from datetime import datetime
 import socket
 import os
+import OAuth
 
 # auth = ('jowamajo', 'Taryn Lily Bowie.')      # Login info
 hostname = socket.gethostname()                 # PC hostname for JWT dictionary
@@ -20,33 +21,8 @@ headers = {
 
 }
 
-# def get_schedules(BASE_URL, params):
-#     """
-#     Description:
-#     Retrieves the employees schedules.
-#     """
-#     response = requests.get(BASE_URL,headers=headers,params=params)
-#     content = response.content
-
-#     add_json_to_folder(content)
-
-# def get_user(username):
-#     """
-#     Request consultant
-#     """
-#     BASE_URL = 'https://scfl.pie.iu.edu/Api/Availabilities'
-#     params = {
-#         "scheduleId" : "826",
-#         "userId" : "18867"
-#     }
-
-#     response = requests.get(BASE_URL, headers=headers, params=params)   
-#     content = response.content
-#     print(response)
-
-#     decoded_content = json.loads(content.decode('utf-8'))
-#     parsed_content = json.dumps(decoded_content, indent = 4)
-#     print(parsed_content)
+def get_token():
+    return jwt_tokens[hostname]
 
 
 def test_http_request(BASE_URL, params, save=False):
@@ -54,7 +30,7 @@ def test_http_request(BASE_URL, params, save=False):
     Description:
     prints status code of HTTP request
     """
-    response = requests.get(BASE_URL,headers=headers,params=params)
+    response = requests.get(BASE_URL,headers=OAuth.get_auth_headers,params=params)
     response.raise_for_status()
     print(response.status_code)
     if save:

@@ -11,6 +11,7 @@ training_template = [
 
     ]
 
+# TODO Implement the layout of what a day of training looks like
 class DaySchedule:
     """
     Datatype that shows clock-in/clock-out and assigned tasks for single shift
@@ -19,6 +20,7 @@ class DaySchedule:
         self.start_time = start_time
         self.end_time = end_time
         self.task_schedule = task_schedule
+
 
 class WeekSchedule:
     """
@@ -37,6 +39,8 @@ class Task:
         self.end_time = end_time
         self.task_type = task_type
 
+def get_schedules():
+    Schedule_data_html = "schedule data from HTML file"
 def create_Training_Schedule(trainee, start_day: datetime, week_schedule):
     curr_training_day = start_day
     SQL_training_schedule.update(curr_training_day,trainee)

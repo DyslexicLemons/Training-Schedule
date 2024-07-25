@@ -6,9 +6,6 @@ from datetime import datetime,timedelta,date
 
 import os
 
-OnPointSchedule = {"Sunday": Consultants["albeach"], "Monday":Consultants["lruizdom"],"Tuesday":Consultants["elijbake"],
-                   "Wednesday":Consultants["ashsteel"],"Thursday":Consultants["jowamajo"],"Friday":Consultants["lruizdom"],
-                   "Saturday":Consultants["elijbake"]}
 
 SupervisorsEmail = "super@iu.edu"
 QATEmail = "scqat@iu.edu"
@@ -20,6 +17,10 @@ class TrainingEmailGenerator:
     def __init__(self):
         self.training_date =  datetime.today()+timedelta(days=1)
 
+    # TODO Needs further implementation
+    # * Remove save_email function call and put it in a Main function somewhere
+    # * Implement styling and formatting functionality
+    # * 
     def first_day_email(self,consult ):
         """
         Writes First Day Email
