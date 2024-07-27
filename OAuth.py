@@ -34,7 +34,7 @@ def get_auth_headers(test=False):
             "Authorization" : request_real_JWT()
         }
 
-def request_real_JWT(self):
+def request_real_JWT():
     """
     requests JWT using Client Credentials and proper OAuth methodology
     """

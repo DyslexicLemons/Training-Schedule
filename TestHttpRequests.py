@@ -6,23 +6,8 @@ import socket
 import os
 import OAuth
 
-# auth = ('jowamajo', 'Taryn Lily Bowie.')      # Login info
-hostname = socket.gethostname()                 # PC hostname for JWT dictionary
-now_iso = datetime.now().isoformat()            # Current date/time (ISO format)
-jwt_tokens = {
 
-    "Desktop" : "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3MjAzMDI5OTQsInVzZXJfbmFtZSI6Impvd2FtYWpvIiwic2NvcGUiOlsicmVhZCJdLCJleHAiOjE3MjAzNDYxOTQsImF1dGhvcml0aWVzIjpbIlJPTEVfU1RVREVOVCIsIlJPTEVfQUNNX1VTRVIiLCJST0xFX01GQV9VU0VSIiwiUk9MRV9TVEFGRiJdLCJqdGkiOiJyX2REaDRteTdPR2NVV0F1aGZWdjdwNW1zYmciLCJjbGllbnRfaWQiOiJwaWUifQ.ofFsvLyrnDYpR2CPR7a1ts9TAjFqnNQl6syF7Mu6ACvLi6V718PGmoINGYgzSULYZ4K3lsMQ0xiGSoJeKibSG1EzXJA4TqhXJyCDBG9lP8Aofbk9j2nd95CUDnQinRwNE4YiqdfLtZlFQeG8y4yJumeWTzo9z8f2CTRT1tsccOnXsieACruaFWK-GssJXiFXAI6K3lQfr7X3lZpPSn56-jxHHsDj5vfjTTjpYLtR1XAmQ8OCUMOJ34nWKmAgMjeldxG3_7EiMUprk8Yfub0JKL3h4O7KdEJQOtl9M9Np6dqX_UhLXrR_KiM4wMZ1ZeONZ0_6otiRLNN1eqIhanXbtQ",
-    "IU-1BSVFY3" : "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3MjA5NTkwMjYsInVzZXJfbmFtZSI6Impvd2FtYWpvIiwic2NvcGUiOlsicmVhZCJdLCJleHAiOjE3MjEwMDIyMjYsImF1dGhvcml0aWVzIjpbIlJPTEVfU1RVREVOVCIsIlJPTEVfQUNNX1VTRVIiLCJST0xFX01GQV9VU0VSIiwiUk9MRV9TVEFGRiJdLCJqdGkiOiJnWFMzOE9kalJnUUpZRV9vQmJjZlA5aFVXWW8iLCJjbGllbnRfaWQiOiJwaWUifQ.A-PPNYlJUGbYtc3onQ_AAFNzVz3ZJmlwCX9rcvKKtbF9R73R4SckCQ8yLJXEMZsLcvVHrN1wWVyvObicLaXpqIT0E4AHb9GMzbtce5lYj2XQFflENMY9aM1vcCtwXjk785NyQ_rjEqYA_vIjyN4ZfRMR0sWi02r0-88-TP6nzv4J7kUf7b1FKbdqODyAACltLqj2ZCFkjttcWRJ4NMBD2n5bu01cxtuU0E4C_-wEED9EwbGZ0Okgt2Ew_qtvO4e7qECiXFtG6rQjD0EEGsKkW1Cr4XDgcAA3vYVX06LMcL92x0usB9unXyfx436msdfHi6eI4lkIRX3k6iU_lBufyA",
-    "Pavlov-Inspiron-7559" : "TBD"
-}
-headers = {
 
-    "Authorization" : jwt_tokens[hostname]
-
-}
-
-def get_token():
-    return jwt_tokens[hostname]
 
 
 def test_http_request(BASE_URL, params, save=False):
