@@ -5,6 +5,7 @@ from datetime import datetime
 import socket
 import os
 import OAuth
+import SQLhelper
 
 # TODO Retrieve JSON file from PIE and saves it to the TrainingSchedule folder
 def get_pie_json(save=False, test=False):
@@ -13,10 +14,10 @@ def get_pie_json(save=False, test=False):
     """
     BASE_URL = 'https://scfl.pie.iu.edu/Api/Shifts'
     params = {
-        'userId': '18867',
-        'startTime': '2024-07-21T04:00:00.000Z',
-        'endTime': '2024-07-28T04:00:00.000Z',
-        'minimal': 'true'
+        "minimal": "true",
+        "weekOf": "2024-07-21T04:00:00.000Z",
+        "groupById": "1",
+        "formatById": "1"
     }
 
     http_response = requests.get(BASE_URL,headers=OAuth.get_auth_headers(test),params=params)
@@ -50,8 +51,10 @@ def save_json(response, BASE_URL, params):
     print(f"JSON data has been written to {file_path}")
 
 # TODO Update PSQL database based on JSON file from pie API
-def update_employees():
-    pass
+def update_employees(json):
+
+    for shift in json:
+         if shift["user"] not in employees["user"]:
 
 # TODO Update Consultants Training Schedules in PSQL based on JSON file from pie API
 def update_schedules(): 
@@ -63,9 +66,9 @@ if __name__ == "__main__":
     save = True
     test_JWT = True
     employee_json = get_pie_json(save, test_JWT)
+    update_employees(employee_json)
     # employees = {}
     # for item in employee_json:
-    #     if item["user"] not in employees["user"]:
-    #         employees[item['user']['username']] = (item['user']['firstName'],item['user']['lastName'], item['user'][''], item['user']['lastName'])
+
 
     
