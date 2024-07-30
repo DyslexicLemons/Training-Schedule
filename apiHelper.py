@@ -57,4 +57,7 @@ def update_schedules():
 
 if __name__ == "__main__":
 
-    get_pie_json(True, True)
+    # 
+    save = True
+    test_JWT = True
+    get_pie_json(save, test_JWT)
