@@ -13,10 +13,10 @@ def get_pie_json(save=False, test=False):
     """
     BASE_URL = 'https://scfl.pie.iu.edu/Api/Shifts'
     params = {
-        'minimal': 'true',
-        'weekOf': '2024-07-21T04:00:00.000Z',
-        'groupById': '1',
-        'formatById': '1'
+        'userId': '18867',
+        'startTime': '2024-07-21T04:00:00.000Z',
+        'endTime': '2024-07-28T04:00:00.000Z',
+        'minimal': 'true'
     }
 
     http_response = requests.get(BASE_URL,headers=OAuth.get_auth_headers(test),params=params)
@@ -24,14 +24,16 @@ def get_pie_json(save=False, test=False):
     print(http_response.status_code)
     if save:
         save_json(http_response, BASE_URL, params)
+    
+    return http_response.json()
 
 def save_json(response, BASE_URL, params):
     """
     Saves formatted version of the JSON file to files
     """
 
-    json_data = response.json()     # Sets HTTP response to variable 'json_data'
-    folder_path = 'PIEJSONS'        # Generate the filename based on current date and time
+    json_data = response.json()     # Sets HTTP GET request response 'json_data'
+    folder_path = 'PIEJSONS'        
 
     current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
     file_name = f"{current_time}.json"
@@ -60,4 +62,10 @@ if __name__ == "__main__":
     # 
     save = True
     test_JWT = True
-    get_pie_json(save, test_JWT)
+    employee_json = get_pie_json(save, test_JWT)
+    # employees = {}
+    # for item in employee_json:
+    #     if item["user"] not in employees["user"]:
+    #         employees[item['user']['username']] = (item['user']['firstName'],item['user']['lastName'], item['user'][''], item['user']['lastName'])
+
+    

@@ -15,7 +15,7 @@ def test_http_request(BASE_URL, params, save=False):
     Description:
     prints status code of HTTP request
     """
-    response = requests.get(BASE_URL,headers=OAuth.get_auth_headers,params=params)
+    response = requests.get(BASE_URL,headers=OAuth.get_auth_headers(),params=params)
     response.raise_for_status()
     print(response.status_code)
     if save:
@@ -75,11 +75,11 @@ if __name__ == "__main__":
     # file_path = "PIEJSONS/20240711_191825.json"
     # strip_json(file_path)
 
-    URL = 'https://scfl.pie.iu.edu/Api/Shifts'
+    BASE_URL = 'https://scfl.pie.iu.edu/Api/Shifts'
     params = {
-        "userId": '14495',
-        "startTime": "2024-07-07T04:00:00.000Z",
-        "endTime": "2024-07-21T04:00:00.000Z",
-        "minimal": 'True'
+        'minimal': 'true',
+        'weekOf': '2024-07-21T04:00:00.000Z',
+        'groupById': '1',
+        'formatById': '1'
     }
-    test_http_request(URL,params)
+    test_http_request(BASE_URL,params)

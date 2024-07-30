@@ -1,0 +1,4413 @@
+{
+    "metadata": {
+        "BASE URL": "https://scfl.pie.iu.edu/Api/Shifts",
+        "Parameters": {
+            "userId": "18867",
+            "startTime": "2024-07-21T04:00:00.000Z",
+            "endTime": "2024-07-28T04:00:00.000Z",
+            "minimal": "true"
+        }
+    },
+    "data": [
+        {
+            "id": 1814305,
+            "shiftGroup": {
+                "id": 420824,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 869,
+                    "name": "Project",
+                    "shortName": "P",
+                    "overviewColor": "#8eb4e3",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 242,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Anyone",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        }
+                    ],
+                    "blacklistMasks": []
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-27T18:00:00-04:00",
+            "endTime": "2024-07-27T20:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "02:00:00",
+                "endTime": "2024-07-27T20:00:00-04:00",
+                "startTime": "2024-07-27T18:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814289,
+            "shiftGroup": {
+                "id": 420823,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 867,
+                    "name": "Support Advisor",
+                    "shortName": "SA",
+                    "overviewColor": "#0072ff",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 243,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Comp Coord (Supervisor)",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        },
+                        {
+                            "id": 6,
+                            "name": "Ticket Editor",
+                            "organization": null
+                        },
+                        {
+                            "id": 35,
+                            "name": "Computer Coordinator",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ],
+                    "blacklistMasks": [
+                        {
+                            "id": 47,
+                            "name": "PA",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ]
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-27T16:00:00-04:00",
+            "endTime": "2024-07-27T18:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "02:00:00",
+                "endTime": "2024-07-27T18:00:00-04:00",
+                "startTime": "2024-07-27T16:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814273,
+            "shiftGroup": {
+                "id": 420822,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 871,
+                    "name": "Email",
+                    "shortName": "EM",
+                    "overviewColor": "Orange",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 242,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Anyone",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        }
+                    ],
+                    "blacklistMasks": []
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-27T14:00:00-04:00",
+            "endTime": "2024-07-27T16:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "02:00:00",
+                "endTime": "2024-07-27T16:00:00-04:00",
+                "startTime": "2024-07-27T14:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814257,
+            "shiftGroup": {
+                "id": 420821,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 867,
+                    "name": "Support Advisor",
+                    "shortName": "SA",
+                    "overviewColor": "#0072ff",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 243,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Comp Coord (Supervisor)",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        },
+                        {
+                            "id": 6,
+                            "name": "Ticket Editor",
+                            "organization": null
+                        },
+                        {
+                            "id": 35,
+                            "name": "Computer Coordinator",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ],
+                    "blacklistMasks": [
+                        {
+                            "id": 47,
+                            "name": "PA",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ]
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-27T12:00:00-04:00",
+            "endTime": "2024-07-27T14:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "02:00:00",
+                "endTime": "2024-07-27T14:00:00-04:00",
+                "startTime": "2024-07-27T12:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814241,
+            "shiftGroup": {
+                "id": 420820,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 867,
+                    "name": "Support Advisor",
+                    "shortName": "SA",
+                    "overviewColor": "#0072ff",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 243,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Comp Coord (Supervisor)",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        },
+                        {
+                            "id": 6,
+                            "name": "Ticket Editor",
+                            "organization": null
+                        },
+                        {
+                            "id": 35,
+                            "name": "Computer Coordinator",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ],
+                    "blacklistMasks": [
+                        {
+                            "id": 47,
+                            "name": "PA",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ]
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-26T12:00:00-04:00",
+            "endTime": "2024-07-26T16:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "04:00:00",
+                "endTime": "2024-07-26T16:00:00-04:00",
+                "startTime": "2024-07-26T12:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814225,
+            "shiftGroup": {
+                "id": 420819,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 866,
+                    "name": "Dispatcher",
+                    "shortName": "D",
+                    "overviewColor": "#ccc1da",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 243,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Comp Coord (Supervisor)",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        },
+                        {
+                            "id": 6,
+                            "name": "Ticket Editor",
+                            "organization": null
+                        },
+                        {
+                            "id": 35,
+                            "name": "Computer Coordinator",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ],
+                    "blacklistMasks": [
+                        {
+                            "id": 47,
+                            "name": "PA",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ]
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-26T10:00:00-04:00",
+            "endTime": "2024-07-26T12:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "02:00:00",
+                "endTime": "2024-07-26T12:00:00-04:00",
+                "startTime": "2024-07-26T10:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814209,
+            "shiftGroup": {
+                "id": 420818,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 867,
+                    "name": "Support Advisor",
+                    "shortName": "SA",
+                    "overviewColor": "#0072ff",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 243,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Comp Coord (Supervisor)",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        },
+                        {
+                            "id": 6,
+                            "name": "Ticket Editor",
+                            "organization": null
+                        },
+                        {
+                            "id": 35,
+                            "name": "Computer Coordinator",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ],
+                    "blacklistMasks": [
+                        {
+                            "id": 47,
+                            "name": "PA",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ]
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-26T08:00:00-04:00",
+            "endTime": "2024-07-26T10:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "02:00:00",
+                "endTime": "2024-07-26T10:00:00-04:00",
+                "startTime": "2024-07-26T08:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814193,
+            "shiftGroup": {
+                "id": 420817,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 872,
+                    "name": "Meeting",
+                    "shortName": "M",
+                    "overviewColor": "#d85858",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 242,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Anyone",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        }
+                    ],
+                    "blacklistMasks": []
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-25T16:00:00-04:00",
+            "endTime": "2024-07-25T17:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "01:00:00",
+                "endTime": "2024-07-25T17:00:00-04:00",
+                "startTime": "2024-07-25T16:00:00-04:00"
+            }
+        },
+        {
+            "id": 1867474,
+            "shiftGroup": {
+                "id": 439303,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 869,
+                    "name": "Project",
+                    "shortName": "P",
+                    "overviewColor": "#8eb4e3",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 242,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Anyone",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        }
+                    ],
+                    "blacklistMasks": []
+                },
+                "recurrenceType": 0,
+                "shiftsCount": 1
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-25T18:00:00+00:00",
+            "endTime": "2024-07-25T20:00:00+00:00",
+            "tags": [],
+            "duration": {
+                "difference": "02:00:00",
+                "endTime": "2024-07-25T20:00:00+00:00",
+                "startTime": "2024-07-25T18:00:00+00:00"
+            }
+        },
+        {
+            "id": 1867475,
+            "shiftGroup": {
+                "id": 439304,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 866,
+                    "name": "Dispatcher",
+                    "shortName": "D",
+                    "overviewColor": "#ccc1da",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 243,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Comp Coord (Supervisor)",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        },
+                        {
+                            "id": 6,
+                            "name": "Ticket Editor",
+                            "organization": null
+                        },
+                        {
+                            "id": 35,
+                            "name": "Computer Coordinator",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ],
+                    "blacklistMasks": [
+                        {
+                            "id": 47,
+                            "name": "PA",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ]
+                },
+                "recurrenceType": 0,
+                "shiftsCount": 1
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-25T17:00:00+00:00",
+            "endTime": "2024-07-25T14:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "01:00:00",
+                "endTime": "2024-07-25T14:00:00-04:00",
+                "startTime": "2024-07-25T17:00:00+00:00"
+            }
+        },
+        {
+            "id": 1818909,
+            "shiftGroup": {
+                "id": 421499,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 867,
+                    "name": "Support Advisor",
+                    "shortName": "SA",
+                    "overviewColor": "#0072ff",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 243,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Comp Coord (Supervisor)",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        },
+                        {
+                            "id": 6,
+                            "name": "Ticket Editor",
+                            "organization": null
+                        },
+                        {
+                            "id": 35,
+                            "name": "Computer Coordinator",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ],
+                    "blacklistMasks": [
+                        {
+                            "id": 47,
+                            "name": "PA",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ]
+                },
+                "recurrenceType": 0,
+                "shiftsCount": 1
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-25T14:00:00+00:00",
+            "endTime": "2024-07-25T17:00:00+00:00",
+            "tags": [],
+            "duration": {
+                "difference": "03:00:00",
+                "endTime": "2024-07-25T17:00:00+00:00",
+                "startTime": "2024-07-25T14:00:00+00:00"
+            }
+        },
+        {
+            "id": 1814145,
+            "shiftGroup": {
+                "id": 420814,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 869,
+                    "name": "Project",
+                    "shortName": "P",
+                    "overviewColor": "#8eb4e3",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 242,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Anyone",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        }
+                    ],
+                    "blacklistMasks": []
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-25T09:00:00-04:00",
+            "endTime": "2024-07-25T10:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "01:00:00",
+                "endTime": "2024-07-25T10:00:00-04:00",
+                "startTime": "2024-07-25T09:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814129,
+            "shiftGroup": {
+                "id": 420813,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 866,
+                    "name": "Dispatcher",
+                    "shortName": "D",
+                    "overviewColor": "#ccc1da",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 243,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Comp Coord (Supervisor)",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        },
+                        {
+                            "id": 6,
+                            "name": "Ticket Editor",
+                            "organization": null
+                        },
+                        {
+                            "id": 35,
+                            "name": "Computer Coordinator",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ],
+                    "blacklistMasks": [
+                        {
+                            "id": 47,
+                            "name": "PA",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ]
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-24T14:00:00-04:00",
+            "endTime": "2024-07-24T17:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "03:00:00",
+                "endTime": "2024-07-24T17:00:00-04:00",
+                "startTime": "2024-07-24T14:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814113,
+            "shiftGroup": {
+                "id": 420812,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 871,
+                    "name": "Email",
+                    "shortName": "EM",
+                    "overviewColor": "Orange",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 242,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Anyone",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        }
+                    ],
+                    "blacklistMasks": []
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-24T12:00:00-04:00",
+            "endTime": "2024-07-24T14:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "02:00:00",
+                "endTime": "2024-07-24T14:00:00-04:00",
+                "startTime": "2024-07-24T12:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814097,
+            "shiftGroup": {
+                "id": 420811,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 867,
+                    "name": "Support Advisor",
+                    "shortName": "SA",
+                    "overviewColor": "#0072ff",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 243,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Comp Coord (Supervisor)",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        },
+                        {
+                            "id": 6,
+                            "name": "Ticket Editor",
+                            "organization": null
+                        },
+                        {
+                            "id": 35,
+                            "name": "Computer Coordinator",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ],
+                    "blacklistMasks": [
+                        {
+                            "id": 47,
+                            "name": "PA",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ]
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-24T10:00:00-04:00",
+            "endTime": "2024-07-24T12:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "02:00:00",
+                "endTime": "2024-07-24T12:00:00-04:00",
+                "startTime": "2024-07-24T10:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814081,
+            "shiftGroup": {
+                "id": 420810,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 869,
+                    "name": "Project",
+                    "shortName": "P",
+                    "overviewColor": "#8eb4e3",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 242,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Anyone",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        }
+                    ],
+                    "blacklistMasks": []
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-24T09:00:00-04:00",
+            "endTime": "2024-07-24T10:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "01:00:00",
+                "endTime": "2024-07-24T10:00:00-04:00",
+                "startTime": "2024-07-24T09:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814065,
+            "shiftGroup": {
+                "id": 420809,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 872,
+                    "name": "Meeting",
+                    "shortName": "M",
+                    "overviewColor": "#d85858",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 242,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Anyone",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        }
+                    ],
+                    "blacklistMasks": []
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-23T14:00:00-04:00",
+            "endTime": "2024-07-23T17:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "03:00:00",
+                "endTime": "2024-07-23T17:00:00-04:00",
+                "startTime": "2024-07-23T14:00:00-04:00"
+            }
+        },
+        {
+            "id": 1814049,
+            "shiftGroup": {
+                "id": 420808,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 867,
+                    "name": "Support Advisor",
+                    "shortName": "SA",
+                    "overviewColor": "#0072ff",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 243,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Comp Coord (Supervisor)",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        },
+                        {
+                            "id": 6,
+                            "name": "Ticket Editor",
+                            "organization": null
+                        },
+                        {
+                            "id": 35,
+                            "name": "Computer Coordinator",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ],
+                    "blacklistMasks": [
+                        {
+                            "id": 47,
+                            "name": "PA",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ]
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-23T12:00:00-04:00",
+            "endTime": "2024-07-23T14:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "02:00:00",
+                "endTime": "2024-07-23T14:00:00-04:00",
+                "startTime": "2024-07-23T12:00:00-04:00"
+            }
+        },
+        {
+            "id": 1852151,
+            "shiftGroup": {
+                "id": 435527,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 869,
+                    "name": "Project",
+                    "shortName": "P",
+                    "overviewColor": "#8eb4e3",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 242,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Anyone",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        }
+                    ],
+                    "blacklistMasks": []
+                },
+                "recurrenceType": 0,
+                "shiftsCount": 1
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-23T15:00:00+00:00",
+            "endTime": "2024-07-23T16:00:00+00:00",
+            "tags": [],
+            "duration": {
+                "difference": "01:00:00",
+                "endTime": "2024-07-23T16:00:00+00:00",
+                "startTime": "2024-07-23T15:00:00+00:00"
+            }
+        },
+        {
+            "id": 1852152,
+            "shiftGroup": {
+                "id": 435528,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 872,
+                    "name": "Meeting",
+                    "shortName": "M",
+                    "overviewColor": "#d85858",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 243,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Comp Coord (Supervisor)",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        },
+                        {
+                            "id": 6,
+                            "name": "Ticket Editor",
+                            "organization": null
+                        },
+                        {
+                            "id": 35,
+                            "name": "Computer Coordinator",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ],
+                    "blacklistMasks": [
+                        {
+                            "id": 47,
+                            "name": "PA",
+                            "organization": {
+                                "id": 3,
+                                "name": "SC"
+                            }
+                        }
+                    ]
+                },
+                "recurrenceType": 0,
+                "shiftsCount": 1
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-23T14:00:00+00:00",
+            "endTime": "2024-07-23T11:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "01:00:00",
+                "endTime": "2024-07-23T11:00:00-04:00",
+                "startTime": "2024-07-23T14:00:00+00:00"
+            }
+        },
+        {
+            "id": 1814017,
+            "shiftGroup": {
+                "id": 420806,
+                "instance": {
+                    "id": 53,
+                    "name": "SC Frontline",
+                    "unpaidInternship": false
+                },
+                "schedule": {
+                    "id": 826,
+                    "name": "Summer 2024 Template",
+                    "startTime": "2024-05-05T04:00:00+00:00",
+                    "endTime": "2024-08-25T04:00:00+00:00",
+                    "published": true,
+                    "showNextWeekOn": null,
+                    "showOnTimeOfDay": "00:00:00"
+                },
+                "funding": {
+                    "id": 70,
+                    "accountType": "SC",
+                    "accountNumber": 1912400,
+                    "subAccount": "SC",
+                    "workAreas": [
+                        {
+                            "id": 166,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 1786
+                        },
+                        {
+                            "id": 167,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerCoordinato",
+                            "kualiTimeWorkAreaId": 4905
+                        },
+                        {
+                            "id": 168,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline PA Staff",
+                            "kualiTimeWorkAreaId": 11163
+                        },
+                        {
+                            "id": 169,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical",
+                            "kualiTimeWorkAreaId": 18744
+                        },
+                        {
+                            "id": 170,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Biweekly SC Frontline",
+                            "kualiTimeWorkAreaId": 19503
+                        },
+                        {
+                            "id": 171,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC FrontlineComputerAssistants",
+                            "kualiTimeWorkAreaId": 50899
+                        },
+                        {
+                            "id": 214,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerCoordinators (new)",
+                            "kualiTimeWorkAreaId": 142924
+                        },
+                        {
+                            "id": 215,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Frontline ComputerAssistants (new)",
+                            "kualiTimeWorkAreaId": 142925
+                        },
+                        {
+                            "id": 216,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "SC Mission Critical (new)",
+                            "kualiTimeWorkAreaId": 142926
+                        },
+                        {
+                            "id": 217,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "UA-CSS SC Frontline Consultants",
+                            "kualiTimeWorkAreaId": 145310
+                        },
+                        {
+                            "id": 242,
+                            "instance": {
+                                "id": 53,
+                                "name": "SC Frontline",
+                                "unpaidInternship": false
+                            },
+                            "name": "Cox: Legacy Scholars",
+                            "kualiTimeWorkAreaId": 96801
+                        }
+                    ]
+                },
+                "shiftType": {
+                    "id": 872,
+                    "name": "Meeting",
+                    "shortName": "M",
+                    "overviewColor": "#d85858",
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "baseLocation": {
+                        "id": 1624,
+                        "name": "At-Large",
+                        "shortName": "AL",
+                        "active": true
+                    },
+                    "defaultFunding": null,
+                    "defaultRole": null,
+                    "appointmentBuildings": [],
+                    "shiftTypeMembers": [],
+                    "active": true
+                },
+                "meeting": null,
+                "role": {
+                    "id": 242,
+                    "instance": {
+                        "id": 53,
+                        "name": "SC Frontline",
+                        "unpaidInternship": false
+                    },
+                    "name": "Anyone",
+                    "masks": [
+                        {
+                            "id": 5,
+                            "name": "Employee",
+                            "organization": null
+                        }
+                    ],
+                    "blacklistMasks": []
+                },
+                "recurrenceType": 1,
+                "shiftsCount": 16
+            },
+            "user": {
+                "id": 18867,
+                "username": "jowamajo",
+                "firstName": "Joseph",
+                "lastName": "Majors",
+                "email": "",
+                "estimatedDeparture": null,
+                "fullTime": true,
+                "visaLimitedScheduling": false
+            },
+            "startTime": "2024-07-23T09:00:00-04:00",
+            "endTime": "2024-07-23T10:00:00-04:00",
+            "tags": [],
+            "duration": {
+                "difference": "01:00:00",
+                "endTime": "2024-07-23T10:00:00-04:00",
+                "startTime": "2024-07-23T09:00:00-04:00"
+            }
+        }
+    ]
+}
