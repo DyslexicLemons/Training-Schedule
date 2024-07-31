@@ -52,9 +52,23 @@ def save_json(response, BASE_URL, params):
 
 # TODO Update PSQL database based on JSON file from pie API
 def update_employees(json):
-
+    SQL_database = SQLhelper.SQLhelper()
+    usernames = SQL_database.get_usernames()
+    training_status = ""
     for shift in json:
-         if shift["user"] not in employees["user"]:
+        PIErole = shift["shiftGroup"]["role"]["name"]
+        if shift["user"] is not None and shift["user"]["username"] not in usernames and shift["shiftGroup"]["shiftType"]["name"] != "Email" and shift["shiftGroup"]["shiftType"]["name"] != "Meeting":
+            if PIErole == "PA (Supervisor)" or PIErole == "Comp Coord (Supervisor)":
+                role = "Supervisor"
+            else:
+                role = "Consultant"
+                if PIErole == "Trainee":
+                    training_status = "Trainee"
+            new_employee = (shift["user"]["id"], shift["user"]["username"], shift["user"]["firstName"], shift["user"]["lastName"], role, training_status) # SQL_database.add_employee(shift["user"]["id"], shift["user"]["username"], shift["user"]["firstName"], shift["user"]["lastName"])
+            for value in new_employee:
+                print(value)
+            print('\n')
+            usernames = usernames + [shift["user"]["username"]] # (shift["user"]["username"],)
 
 # TODO Update Consultants Training Schedules in PSQL based on JSON file from pie API
 def update_schedules(): 
@@ -67,8 +81,6 @@ if __name__ == "__main__":
     test_JWT = True
     employee_json = get_pie_json(save, test_JWT)
     update_employees(employee_json)
-    # employees = {}
-    # for item in employee_json:
 
 
     
