@@ -1,16 +1,64 @@
-training_schedule_template = {
-    'start_date' : '',
-    'training_schedule' = {
-        'week 1' : "Canvas Week 1 Training",
-        'Week 2' : "Canvas Week 2 Training",
-        'Week 3' : "Canvas Week 3 Training",
-        'Week 4' : "Chat Shadowing/coaching",
-        'Week 5' : 'Call Shadowing/Coaching'
-    },
-    'work_schedule' = {}
+from datetime import datetime, timedelta
 
+# Sample data for the training schedule template
+start_date = "2024-08-12"
+
+# Sample work schedule
+work_schedule = {
+    "Monday": {"start_time": "09:00", "end_time": "17:00"},
+    "Tuesday": {"start_time": "09:00", "end_time": "17:00"},
+    "Wednesday": {"start_time": "09:00", "end_time": "17:00"},
+    "Thursday": {"start_time": "09:00", "end_time": "17:00"},
+    "Friday": {"start_time": "09:00", "end_time": "17:00"}
 }
-from Schedule import Date
+
+# Function to get the date of the next specific day of the week
+def get_next_day_of_week(start_date, target_day):
+    days_ahead = target_day - start_date.weekday()
+    if days_ahead < 0:
+        days_ahead += 7
+    return start_date + timedelta(days=days_ahead)
+
+# Generate dates for each day in the work schedule starting from the start_date
+start_date_obj = datetime.strptime(start_date, "%Y-%m-%d")
+dates_by_day_of_week = {}
+for day in work_schedule:
+    day_index = list(work_schedule.keys()).index(day)
+    next_date = get_next_day_of_week(start_date_obj, day_index)
+    dates_by_day_of_week[day] = [next_date + timedelta(weeks=i) for i in range(5)]
+
+# Sample training schedule with 5 weeks
+training_schedule = []
+for week in range(1, 6):
+    week_schedule = {
+        "week": f"Week {week}",
+        "assigned_task": f"Task for week {week}",
+        "days": []
+    }
+    for day, times in work_schedule.items():
+        for date in dates_by_day_of_week[day]:
+            day_schedule = {
+                "day_of_week": day,
+                "date": date.strftime("%Y-%m-%d"),
+                "first_day": date == dates_by_day_of_week[day][0],
+                "assigned_task": f"Task for week {week}"
+            }
+            week_schedule["days"].append(day_schedule)
+    training_schedule.append(week_schedule)
+
+# Complete training schedule template
+training_schedule_template = {
+    "start_date": start_date,
+    "work_schedule": work_schedule,
+    "training_schedule": training_schedule
+}
+
+# Print the training schedule template
+import pprint
+pprint.pprint(training_schedule_template)
+
+
+##########################################################################################################
 
 
 
