@@ -12,10 +12,11 @@ def get_pie_json(save=False, test=False):
     """
     Gets Json file from PIE API
     """
+    current_date = datetime.now().strftime('%Y-%m-%d')
     BASE_URL = 'https://scfl.pie.iu.edu/Api/Shifts'
     params = {
         "minimal": "true",
-        "weekOf": "2024-07-21T04:00:00.000Z",
+        "weekOf": current_date+"T04:00:00.000Z",
         "groupById": "1",
         "formatById": "1"
     }
@@ -54,17 +55,21 @@ def save_json(response, BASE_URL, params):
 def update_employees(json):
     SQL_database = SQLhelper.SQLhelper()
     usernames = SQL_database.get_usernames()
+    print("current employees in Database: ")
+    print(usernames)
     training_status = ""
-    for shift in json:
+    for shift in json: # each item in the JSON is describing a different shift
         PIErole = shift["shiftGroup"]["role"]["name"]
-        if shift["user"] is not None and shift["user"]["username"] not in usernames and shift["shiftGroup"]["shiftType"]["name"] != "Email" and shift["shiftGroup"]["shiftType"]["name"] != "Meeting":
+        if shift["user"] is not None and shift["user"]["username"] not in usernames:
             if PIErole == "PA (Supervisor)" or PIErole == "Comp Coord (Supervisor)":
                 role = "Supervisor"
             else:
                 role = "Consultant"
                 if PIErole == "Trainee":
                     training_status = "Trainee"
-            new_employee = (shift["user"]["id"], shift["user"]["username"], shift["user"]["firstName"], shift["user"]["lastName"], role, training_status) # SQL_database.add_employee(shift["user"]["id"], shift["user"]["username"], shift["user"]["firstName"], shift["user"]["lastName"])
+            new_employee = (shift["user"]["id"], shift["user"]["username"], shift["user"]["firstName"], shift["user"]["lastName"], role, training_status) 
+            # SQL_database.add_employee(shift["user"]["id"], shift["user"]["username"], shift["user"]["firstName"], shift["user"]["lastName"])
+
             for value in new_employee:
                 print(value)
             print('\n')
