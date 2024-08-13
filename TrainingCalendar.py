@@ -1,9 +1,14 @@
 training_schedule_template = {
-    'week 1' : "Canvas Week 1 Training",
-    'Week 2' : "Canvas Week 2 Training",
-    'Week 3' : "Canvas Week 3 Training",
-    'Week 4' : "Chat Shadowing/coaching",
-    'Week 5' : 'Call Shadowing/Coaching'
+    'start_date' : '',
+    'training_schedule' = {
+        'week 1' : "Canvas Week 1 Training",
+        'Week 2' : "Canvas Week 2 Training",
+        'Week 3' : "Canvas Week 3 Training",
+        'Week 4' : "Chat Shadowing/coaching",
+        'Week 5' : 'Call Shadowing/Coaching'
+    },
+    'work_schedule' = {}
+
 }
 from Schedule import Date
 

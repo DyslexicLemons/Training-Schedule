@@ -1,5 +1,5 @@
 import psycopg2
-import apiHelper
+import APIHelper
 
 class SQLhelper:
     def __init__(self):
@@ -31,6 +31,14 @@ class SQLhelper:
 
         self.connection.commit()
         print(f"Employee {username} added successfully")
+
+    def clear_database(self):
+        try:
+            self.cursor.execute(f"TRUNCATE TABLE employees")
+            self.connection.commit()
+            print(f"Table 'employees' has been truncated.")
+        except Exception as error:
+            print(f"Error truncating table: {error}")
 
     
     def quit(self):

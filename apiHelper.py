@@ -5,7 +5,7 @@ from datetime import datetime
 import socket
 import os
 import OAuth
-import SQLhelper
+import SQLHelper
 
 # TODO Retrieve JSON file from PIE and saves it to the TrainingSchedule folder
 def get_pie_json(save=False, test=False):
@@ -51,14 +51,13 @@ def save_json(response, BASE_URL, params):
     
     print(f"JSON data has been written to {file_path}")
 
-# TODO Update PSQL database based on JSON file from pie API
+
 def update_employees(json):
-    SQL_database = SQLhelper.SQLhelper()
-    usernames = SQL_database.get_usernames()
-    print("current employees in Database: ")
-    print(usernames)
+    SQL_database = SQLHelper.SQLhelper()
+    SQL_database.clear_database()
+    usernames = []
     training_status = ""
-    for shift in json: # each item in the JSON is describing a different shift
+    for shift in json: # each item in the JSON is describing a  shift
         PIErole = shift["shiftGroup"]["role"]["name"]
         if shift["user"] is not None and shift["user"]["username"] not in usernames:
             if PIErole == "PA (Supervisor)" or PIErole == "Comp Coord (Supervisor)":
@@ -67,13 +66,10 @@ def update_employees(json):
                 role = "Consultant"
                 if PIErole == "Trainee":
                     training_status = "Trainee"
-            new_employee = (shift["user"]["id"], shift["user"]["username"], shift["user"]["firstName"], shift["user"]["lastName"], role, training_status) 
-            # SQL_database.add_employee(shift["user"]["id"], shift["user"]["username"], shift["user"]["firstName"], shift["user"]["lastName"])
+            SQL_database.add_employee(shift["user"]["id"], shift["user"]["username"], shift["user"]["firstName"], shift["user"]["lastName"], role, training_status) 
+            usernames = usernames + [shift["user"]["username"]]
 
-            for value in new_employee:
-                print(value)
-            print('\n')
-            usernames = usernames + [shift["user"]["username"]] # (shift["user"]["username"],)
+            print(f'User {shift["user"]["username"]} added\n')
 
 # TODO Update Consultants Training Schedules in PSQL based on JSON file from pie API
 def update_schedules(): 
