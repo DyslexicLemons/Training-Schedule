@@ -1,0 +1,14 @@
+# Ignore the .env file
+creds.env
+
+# Ignore the config.json file
+config.json
+
+# Ignore all .log files
+*.log
+
+# Ignore the entire /venv directory
+venv/
+
+# Ignore all files in the /secrets directory
+secrets/
