@@ -73,6 +73,7 @@ class TrainingApp:
         trainees_label = tk.Label(trainees_frame, text="Trainees:")
         trainees_label.pack(pady=10)
 
+        
         trainees_list = [("John Doe", "Position A", "50%"), ("Jane Smith", "Position B", "75%")]  # Placeholder
         for trainee in trainees_list:
             trainee_frame = tk.Frame(trainees_frame)

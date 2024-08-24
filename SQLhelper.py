@@ -27,6 +27,12 @@ class SQLHelper:
 
         return usernames
     
+    def get_trainees(self):
+        self.cursor.execute("SELECT firstname, lastname, username FROM employees")
+        trainees = self.cursor.fetchall()
+
+        return trainees
+    
     def add_employee(self, id, username, first_name, last_name, role, training_status):
         insert_query = """INSERT INTO employees (id, username, firstname, lastname, role, trainingstatus) VALUES (%s, %s, %s, %s, %s, %s)"""
         self.cursor.execute(insert_query, (id,username,first_name,last_name,role, training_status))
