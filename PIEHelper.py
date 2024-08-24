@@ -30,9 +30,11 @@ def get_pie_data(save=False, test=False):
     }
     headers = Authorization.get_token(test)
 
+    print("Submitting HTTP Request...")
     http_response = requests.get(BASE_URL,headers=headers,params=params)
     http_response.raise_for_status()
-    print(http_response.status_code)
+    print("HTTP Request submitted with return code: " + str(http_response.status_code))
+
     if save:
         save_file(http_response.json(), BASE_URL, params)
     
@@ -50,10 +52,11 @@ def save_file(json_data, BASE_URL, params):
     Returns (NA): Prints value contigent upon saving the new file
     
     """
+    print("\n\nSaving file...")
     current_time = datetime.now().strftime("%Y%m%d_%H%M%S") 
     file_name = f"{current_time}.json"
     folder_path = 'PIEJSONS'        
-    file_path = os.path.join(folder_path, file_name) # Sets file path to /PIEJSONS/{filename}
+    file_path = os.path.join(folder_path, file_name) # File Path = /PIEJSONS/{filename}
 
     metadata = { # Adds params for HTTP request to JSON
         "BASE URL": BASE_URL,

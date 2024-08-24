@@ -8,7 +8,7 @@ import os
 
 now_iso = datetime.now().isoformat()            # Current date/time (ISO format)
 jwt_token = os.getenv('JWT_TOKEN')
-load_dotenv()
+load_dotenv('creds.env')
 
 def get_token(test=False):
     """
@@ -20,10 +20,18 @@ def get_token(test=False):
     Returns:
     Token (string): JWT token to access PIE API
     """
-    if test:
-        return get_test_token()
+    print("Obtaining token....")
+
+
+    token = get_test_token() if test else get_real_token()
+    test_string = "(Test)" if test else ""
+    
+    if token:
+        print(f"Token obtained! {test_string} \n")
     else:
-        return get_real_token()
+        print("Failed to obtain token \n")
+
+    return token
 
 
 def get_test_token():
@@ -32,11 +40,9 @@ def get_test_token():
     Returns token obtained manually through inspect 
     
     """
-#     test_auth_headers = {
-#     "Authorization" : 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYmYiOjE3MjQ1Mjk2MDIsInVzZXJfbmFtZSI6Impvd2FtYWpvIiwic2NvcGUiOlsicmVhZCJdLCJleHAiOjE3MjQ1NzI4MDIsImF1dGhvcml0aWVzIjpbIlJPTEVfU1RVREVOVCIsIlJPTEVfQUNNX1VTRVIiLCJST0xFX01GQV9VU0VSIiwiUk9MRV9TVEFGRiJdLCJqdGkiOiJHb1I5d2szbS04ZmsxZVozRVQwYkRKTGJKWlUiLCJjbGllbnRfaWQiOiJwaWUifQ.mWqIvcDhf9dGnPqVF5w2-YbS5LEzZhhnWc6Xem1gaCFid4Hyg64mG4Ay4LbgE-vBrOzMovFOgnVDugq9ZeprImR2CIHCu5vQO1LedVyYnrkE8QkO27CpjqeL2z_VHiKbvTW0-I5N0tdpkJuadP5HG2ncV_FZTNiwY5O5mO1Wd36dIxUZkIWBK7DxLcdIKWVQWSDrHOZ7plEKFOdokox__EBAlxBE2ZSHV1d3AVg-lheU4qXnDwIuFlGLRp56_3W07zJ3J6EMy_37Tqoja8YdkWcESpU-IdmllePUKZ7A5_Rf3BdqsZMGmIjZDu2BWJLCWWo3bpW7geqrkWZ7q0znfA'
-# }
+
     token = os.getenv('JWT_TOKEN')
-    print(token)
+
     test_auth_headers = {
         "Authorization" : token
     }
@@ -69,3 +75,7 @@ def get_real_token():
     else:
         print('failed to get token', response.status_code)
         print(response.json())
+
+
+if __name__ == "__main__":
+    token = get_token(test=True)
