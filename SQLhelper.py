@@ -1,8 +1,10 @@
 import psycopg2
-import APIHelper
 
-class SQLhelper:
+class SQLHelper:
     def __init__(self):
+        """
+        
+        """
         try:
             # Define your connection parameters
             self.connection = psycopg2.connect(
@@ -46,8 +48,26 @@ class SQLhelper:
         self.connection.close()
         print("PostgreSQL connection is closed.")
 
+    def update_employees(self, json):
+        self.clear_database()
+        usernames = []
+        training_status = ""
+        for shift in json: # each item in the JSON is describing a  shift
+            PIErole = shift["shiftGroup"]["role"]["name"]
+            if shift["user"] is not None and shift["user"]["username"] not in usernames:
+                if PIErole == "PA (Supervisor)" or PIErole == "Comp Coord (Supervisor)":
+                    role = "Supervisor"
+                else:
+                    role = "Consultant"
+                    if PIErole == "Trainee":
+                        training_status = "Trainee"
+                self.add_employee(shift["user"]["id"], shift["user"]["username"], shift["user"]["firstName"], shift["user"]["lastName"], role, training_status) 
+                usernames = usernames + [shift["user"]["username"]]
+
+                print(f'User {shift["user"]["username"]} added\n')
+
 if __name__ == "__main__":
-    SQL = SQLhelper()
+    SQL = SQLHelper()
     usernames = SQL.get_usernames()
     for username in usernames:
         print(username[0])
