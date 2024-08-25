@@ -25,10 +25,14 @@ class SQLHelper:
         self.cursor.execute("SELECT username FROM employees")
         usernames = self.cursor.fetchall()
 
-        return usernames
+    def get_users(self):
+        self.cursor.execute("SELECT * FROM employees")
+        users = self.cursor.fetchall()
+
+        return users
     
     def get_trainees(self):
-        self.cursor.execute("SELECT firstname, lastname, username FROM employees")
+        self.cursor.execute("SELECT firstname, lastname, username, role FROM employees WHERE trainingstatus = 'Trainee'")
         trainees = self.cursor.fetchall()
 
         return trainees
@@ -74,9 +78,7 @@ class SQLHelper:
 
 if __name__ == "__main__":
     SQL = SQLHelper()
-    usernames = SQL.get_usernames()
-    for username in usernames:
-        print(username[0])
-
+    trainees = SQL.get_trainees()
+    print(trainees)
     SQL.quit()
 

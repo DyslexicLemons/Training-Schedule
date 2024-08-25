@@ -1,11 +1,13 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
+import SQLHelper
 
 class TrainingApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Training App")
         self.root.geometry("800x600")
+        self.SQL = SQLHelper.SQLHelper()
 
         self.create_menu()
         self.show_main_menu()
@@ -60,9 +62,10 @@ class TrainingApp:
         trainees_label = tk.Label(main_frame, text="Trainees:")
         trainees_label.pack(pady=10)
 
-        trainees_list = [("John Doe", "Position A", "50%"), ("Jane Smith", "Position B", "75%")]  # Placeholder
+        trainees_list = self.SQL.get_trainees()
+        print(trainees_list)
         for trainee in trainees_list:
-            trainee_label = tk.Label(main_frame, text=f"{trainee[0]}, {trainee[1]}, {trainee[2]}")
+            trainee_label = tk.Label(main_frame, text=f"{trainee[0]} {trainee[1]}, {trainee[3]}, 50%")
             trainee_label.pack(pady=5)
 
     def show_trainees(self):
