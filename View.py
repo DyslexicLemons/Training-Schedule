@@ -77,12 +77,12 @@ class TrainingApp:
         trainees_label.pack(pady=10)
 
         
-        trainees_list = [("John Doe", "Position A", "50%"), ("Jane Smith", "Position B", "75%")]  # Placeholder
+        trainees_list = self.SQL.get_trainees()
         for trainee in trainees_list:
             trainee_frame = tk.Frame(trainees_frame)
             trainee_frame.pack(pady=5)
 
-            trainee_label = tk.Label(trainee_frame, text=f"{trainee[0]}, {trainee[1]}, {trainee[2]}")
+            trainee_label = tk.Label(trainee_frame, text=f"{trainee[0]} {trainee[1]}, {trainee[3]}, 50%")
             trainee_label.pack(side=tk.LEFT)
 
             view_schedule_button = tk.Button(trainee_frame, text="View Training Schedule", command=lambda t=trainee: self.show_trainee_schedule(t))
