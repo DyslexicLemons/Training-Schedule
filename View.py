@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import SQLHelper
 from datetime import datetime, timedelta
+from collections import defaultdict
 import calendar
 
 class TrainingApp:
@@ -135,6 +136,8 @@ class TrainingApp:
 
     def show_training_schedules(self):
         self.clear_main_content()
+        schedule_frame = tk.Frame(self.root)
+        schedule_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
         schedules_frame = tk.Frame(self.root)
         schedules_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
 
@@ -143,8 +146,8 @@ class TrainingApp:
         trainee_label.pack(pady=10)
 
         trainees_list = self.SQL.get_trainees()
-        trainee_names = [f"{trainee[0]} {trainee[1]}" for trainee in trainees_list]
-        self.selected_trainee = tk.StringVar()
+        trainee_names = [f"{trainee[0]} {trainee[1]} ({trainee[2]})" for trainee in trainees_list]
+        self.selected_trainee = tk.StringVar()  
         trainee_dropdown = ttk.Combobox(schedules_frame, textvariable=self.selected_trainee, values=trainee_names)
         trainee_dropdown.pack(pady=10)
         
@@ -161,17 +164,37 @@ class TrainingApp:
             widget.destroy()
 
         selected = self.selected_trainee.get()
+        print(selected)
         if not selected:
             return
+        
+        print(selected)
+        username = selected.split()[2]  # Assuming username is the first part
+        print(username)
+        cleaned_username = username.strip("()")
 
-        username = selected.split()[0]  # Assuming username is the first part
+        # Convert defaultdict to regular dict for better readability (optional)
+        trainee_scheduling_data = self.SQL.get_training_schedule(cleaned_username)
 
-        training_tasks = self.SQL.get_training_schedule(username)
-
-        if not training_tasks:
+        if not trainee_scheduling_data:
             self.no_tasks_interface()
         else:
-            self.show_training_calendar(training_tasks)
+            # Initialize a nested dictionary to hold the schedules
+            Trainee_Schedules = defaultdict(lambda: defaultdict(lambda: [[], []]))
+
+            # Populate the dictionary
+            trainee_scheduling_data = self.SQL.get_all_training_schedules()
+            for week, trainee, date, activity in trainee_scheduling_data:
+                date_str = date.strftime("%m/%d/%Y")  # Format date as string
+                Trainee_Schedules[trainee][f"Week {week}"][0].append(date_str)
+                Trainee_Schedules[trainee][f"Week {week}"][1].append(activity)
+
+            # Convert defaultdict to regular dict for better readability (optional)
+            Trainee_Schedules = {trainee: dict(weeks) for trainee, weeks in Trainee_Schedules.items()}
+
+            schedule = Trainee_Schedules[cleaned_username]
+
+            self.show_training_calendar(schedule)
 
     def no_tasks_interface(self):
         message = tk.Label(self.schedule_display_frame, text="No training items found.")
@@ -203,78 +226,111 @@ class TrainingApp:
             for day in range(5):  # 5 tasks per week
                 task_date = start_date + timedelta(days=(week - 1) * 5 + day)
                 filename = f"CanvasWeek{week}"
-                self.SQL.add_training_day(week, self.selected_trainee.get().split()[0], task_date.strftime("%Y-%m-%d"), filename)
+                self.SQL.add_training_day(week, self.selected_trainee.get().split()[2], task_date.strftime("%Y-%m-%d"), filename)
 
         # For weeks 4 and 5
         for week, filename, num_tasks in [(4, "ChatTraining", 2), (5, "CallTraining", 2)]:
             for day in range(num_tasks):
                 task_date = start_date + timedelta(days=(3 * 5) + day)  # Start from the end of week 3
-                self.SQL.add_training_day(week, self.selected_trainee.get().split()[0], task_date.strftime("%Y-%m-%d"), filename)
+                self.SQL.add_training_day(week, self.selected_trainee.get().split()[2], task_date.strftime("%Y-%m-%d"), filename)
 
         messagebox.showinfo("Success", "Training schedule created from template.")
 
-    def show_training_calendar(self, training_tasks):
-        # Sort tasks by week
-        training_tasks.sort(key=lambda x: x[0])  # Assuming x[0] is week_of
+    def show_training_calendar(self, trainee_scheduling_data):
+        self.clear_main_content()
+        # Create a canvas and scrollbar for the calendar view
 
-        for task in training_tasks:
-            week_of, username, date, filename = task
+        calendar_canvas = tk.Canvas(self.root)
+        calendar_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
-            # Create a row for the week
-            row_frame = tk.Frame(self.schedule_display_frame)
-            row_frame.pack(pady=5)
+        scrollbar = ttk.Scrollbar(self.root, orient="vertical", command=calendar_canvas.yview)
+        scrollbar.pack(side=tk.RIGHT, fill="y")
 
-            week_label = tk.Label(row_frame, text=f"Week: {week_of}")
-            week_label.pack(side=tk.LEFT)
+        # Create a frame inside the canvas to hold the calendar
+        calendar_frame = tk.Frame(calendar_canvas)
+        
+        # Configure the canvas to scroll with the scrollbar
+        calendar_canvas.create_window((0, 0), window=calendar_frame, anchor="nw")
+        calendar_canvas.configure(yscrollcommand=scrollbar.set)
 
-            # Placeholder for connected boxes
-            task_label = tk.Label(row_frame, text=f"{date}: {filename}")
-            task_label.pack(side=tk.LEFT, padx=10)
+        # Create a header for the calendar
+        header_label = tk.Label(calendar_frame, text="Scott's Training Calendar", font=("Arial", 16))
+        header_label.pack(pady=10)
 
-            # You can customize the box appearance here if needed
+        # Create a calendar for the current month
+        self.display_trainee_calendar(calendar_frame, trainee_scheduling_data)
+
+        # Update the scroll region
+        calendar_frame.update_idletasks()
+        calendar_canvas.config(scrollregion=calendar_canvas.bbox("all"))
+
+        # Bind mouse scroll to work with the canvas
+        calendar_frame.bind("<Configure>", lambda e: calendar_canvas.config(scrollregion=calendar_canvas.bbox("all")))
+        calendar_canvas.bind_all("<MouseWheel>", lambda event: calendar_canvas.yview_scroll(int(-1*(event.delta/120)), "units"))
+
 
     def show_test_calendar_view(self):
         self.clear_main_content()
-        calendar_frame = tk.Frame(self.root)
-        calendar_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
+
+        
+        # Create a canvas and scrollbar for the calendar view
+        calendar_canvas = tk.Canvas(self.root)
+        calendar_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+        scrollbar = ttk.Scrollbar(self.root, orient="vertical", command=calendar_canvas.yview)
+        scrollbar.pack(side=tk.RIGHT, fill="y")
+
+        # Create a frame inside the canvas to hold the calendar
+        calendar_frame = tk.Frame(calendar_canvas)
+        
+        # Configure the canvas to scroll with the scrollbar
+        calendar_canvas.create_window((0, 0), window=calendar_frame, anchor="nw")
+        calendar_canvas.configure(yscrollcommand=scrollbar.set)
 
         # Create a header for the calendar
         header_label = tk.Label(calendar_frame, text="Test Calendar View", font=("Arial", 16))
         header_label.pack(pady=10)
 
         # Create a calendar for the current month
-        self.create_calendar(calendar_frame)
+        self.display_trainee_calendar(calendar_frame)
 
-    def create_calendar(self, parent):
-        # Get the current year and month
-        import datetime
-        now = datetime.datetime.now()
-        year = now.year
-        month = now.month
+        # Update the scroll region
+        calendar_frame.update_idletasks()
+        calendar_canvas.config(scrollregion=calendar_canvas.bbox("all"))
 
-        # Create a month calendar
-        month_calendar = calendar.monthcalendar(year, month)
-
-        # Create labels for the days of the week
-        days_label = tk.Frame(parent)
-        days_label.pack()
-        days = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
-        for day in days:
-            label = tk.Label(days_label, text=day, width=5, font=("Arial", 12))
-            label.pack(side=tk.LEFT)
-
-        # Create a grid for the days
-        for week in month_calendar:
-            week_frame = tk.Frame(parent)
-            week_frame.pack()
-            for day in week:
-                if day == 0:
-                    label = tk.Label(week_frame, text='', width=5)
-                else:
-                    label = tk.Label(week_frame, text=day, width=5, relief='solid')
-                label.pack(side=tk.LEFT)
+        # Bind mouse scroll to work with the canvas
+        calendar_frame.bind("<Configure>", lambda e: calendar_canvas.config(scrollregion=calendar_canvas.bbox("all")))
+        calendar_canvas.bind_all("<MouseWheel>", lambda event: calendar_canvas.yview_scroll(int(-1*(event.delta/120)), "units"))
 
 
+
+    def display_trainee_calendar(self, parent, trainee_scheduling_data):
+        print('hello')
+
+
+        # Assuming 'schedule' is your dictionary
+        sorted_weeks = sorted(trainee_scheduling_data.keys(), key=lambda x: int(x.split()[1]))
+
+        for week in sorted_weeks:
+            data = trainee_scheduling_data[week]
+            
+            # Week Label
+            week_label = tk.Label(parent, text=week, font=("Arial", 12, "bold"), anchor="w")
+            week_label.pack(pady=5, padx=5)
+
+            # Dates Row
+            date_frame = tk.Frame(parent)
+            date_frame.pack(fill=tk.X)
+            for date in data[0]:
+                date_label = tk.Label(date_frame, text=date, width=14, height=1, relief="flat")
+                date_label.pack(side=tk.LEFT, padx=5, pady=1)
+
+            # Activity Row
+            activity_frame = tk.Frame(parent)
+            activity_frame.pack(fill=tk.X)
+            for activity in data[1]:
+                activity_label = tk.Label(activity_frame, text=activity, width=14, height=2, relief="flat", wraplength=100, anchor='center')
+                activity_label.pack(side=tk.LEFT, padx=5, pady=1)
 
 
 

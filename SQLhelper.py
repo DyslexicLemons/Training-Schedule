@@ -15,7 +15,7 @@ class SQLHelper:
         """
         try:
             # Define your connection parameters
-            self.connection = psycopg2.connect( # to connect manually type in "psql  -h 192.168.4.28 -d iusc iU postgres -p 5432" and for password, type "5678"
+            self.connection = psycopg2.connect( # to connect manually type in "psql  -h 192.168.4.28 -d iusc -U postgres -p 5432" and for password, type "5678"
                 user="postgres",
                 password="5678",
                 host="192.168.4.28",
@@ -128,6 +128,11 @@ class SQLHelper:
             self.remove_employee(username)
             print(f'User {username} removed\n')
 
+
+#                                                              ---TRAINING SCHEDULE REQUESTS START ----
+
+
+
     def get_todays_training_tasks(self):
         today_date = "2024-09-20"  # You can get today's date dynamically using datetime
         self.cursor.execute("""
@@ -181,8 +186,14 @@ class SQLHelper:
     def get_training_schedule(self, username):
         self.cursor.execute("""
             SELECT week_of, username, date, filename FROM training_schedule
-            WHERE username = %s ORDER BY week_of;
+            WHERE username = %s ORDER BY date;
         """, (username,))
+        return self.cursor.fetchall()
+    
+    def get_all_training_schedules(self):
+        self.cursor.execute("""
+            SELECT week_of, username, date, filename FROM training_schedule;
+        """)
         return self.cursor.fetchall()
 
     def get_todays_training_tasks(self):
@@ -207,5 +218,7 @@ if __name__ == "__main__":
     SQL = SQLHelper()
     trainees = SQL.get_trainees()
     print(trainees)
+    Training_schedule = SQL.get_training_schedule('Scott')
+    print(Training_schedule)
     SQL.quit()
 
