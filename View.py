@@ -20,7 +20,6 @@ class TrainingApp:
 
         self.create_menu()
         self.show_main_menu()
-
     def create_menu(self):
         # Create side menu
         self.menu_frame = tk.Frame(self.root, bg="lightgrey", width=200)
@@ -49,13 +48,11 @@ class TrainingApp:
         # Exit Button
         self.exit_button = tk.Button(self.menu_frame, text="Exit", command=self.root.quit)
         self.exit_button.pack(fill=tk.X)
-
     def clear_main_content(self):
         # Destroy all widgets in main content area
         for widget in self.root.winfo_children():
             if widget not in [self.menu_frame]:
                 widget.destroy()
-
     def show_main_menu(self):
         self.clear_main_content()
         main_frame = tk.Frame(self.root)
@@ -104,7 +101,6 @@ class TrainingApp:
 
             # Create a completion bar
             self.create_completion_bar(main_frame, progress_value)
-
     def create_completion_bar(self, parent, percentage):
         # Create a frame to hold the progress bar
         bar_frame = tk.Frame(parent)
@@ -127,15 +123,12 @@ class TrainingApp:
 
         # Display the percentage in the center of the bar
         canvas.create_text(canvas_width // 2, canvas_height // 2, text=f"{percentage}%", fill="black")
-
     def get_color_gradient(self, percentage):
         """Return a color gradient based on the percentage.
         Starts at red (low %) and transitions to green (high %)."""
         red = int(255 * (1 - (percentage / 100)))  # Red decreases as percentage increases
         green = int(255 * (percentage / 100))      # Green increases as percentage increases
         return f'#{red:02x}{green:02x}00'
-
-
     def show_trainees(self):
         # Clear the main content area before displaying new content
         self.clear_main_content()
@@ -171,8 +164,6 @@ class TrainingApp:
                 command=lambda t=username: self.show_trainee_schedule(t)
             )
             view_schedule_button.pack(side=tk.RIGHT)
-
-
     def show_training_plans(self, date=datetime.now().strftime("%m-%d-%y")):
         print(date)
         self.clear_main_content()
@@ -188,11 +179,7 @@ class TrainingApp:
         training_plan_display = HTMLLabel(plans_frame, html=content)
         training_plan_display.pack(pady=10)
 
-        # update_training_plan_button = tk.Button(plans_frame, text="Update Training Plan")
-        # update_training_plan_button.pack(pady=10)
-
         if content == "No training plan available":
-                today = datetime.now().date()
                 create_training_plan_button = tk.Button(plans_frame, text="Create Training Plan", command=lambda: self.create_training_plan(date))
                 create_training_plan_button.pack(pady=10)
         else:
@@ -215,8 +202,6 @@ class TrainingApp:
 
         next_day_button = tk.Button(plans_frame, text="Next Day >", command = lambda:  self.show_training_plans(date_after))
         next_day_button.pack(side=tk.RIGHT, padx=20)
-
-
     def get_training_plan(self, date):
         try:
             with open(f"TrainingPlans/TP{date}.html", "r") as file:
@@ -251,7 +236,6 @@ class TrainingApp:
         # Delete button to remove the file
         delete_button = tk.Button(edit_frame, text="Delete", command=lambda: self.delete_training_plan(date))
         delete_button.pack(side=tk.LEFT, padx=(5, 10))
-
     def save_training_plan(self, date):
         # Save the content from the text area back to the file
         with open(f"TrainingPlans/TP{date}.html", "w") as file:
@@ -260,7 +244,6 @@ class TrainingApp:
         
         messagebox.showinfo("Success", "Training plan updated successfully!")
         self.show_training_plans(date)  # Reload training plans view
-
     def delete_training_plan(self, date):
         if os.path.exists(f"TrainingPlans/TP{date}.html"):
             os.remove(f"TrainingPlans/TP{date}.html")
@@ -292,7 +275,6 @@ class TrainingApp:
         # Placeholder for showing training schedule
         self.schedule_display_frame = tk.Frame(schedules_frame)
         self.schedule_display_frame.pack(pady=10)
-
     def display_trainee_schedule(self, trainee):
         # Clear previous schedule display
         for widget in self.schedule_display_frame.winfo_children():
@@ -325,7 +307,6 @@ class TrainingApp:
             schedule = Trainee_Schedules[username]
 
             self.show_training_calendar(schedule, username)
-
     def no_tasks_interface(self, trainee):
         message = tk.Label(self.schedule_display_frame, text="No training items found.")
         message.pack(pady=10)
@@ -341,7 +322,6 @@ class TrainingApp:
 
         create_from_template_button = tk.Button(self.schedule_display_frame, text="Create Training Schedule from Template", command=lambda: self.create_from_template(trainee))
         create_from_template_button.pack(pady=5)
-
     def create_from_template(self, trainee):
         start_date_str = self.start_date_entry.get()
         if not start_date_str:
@@ -365,7 +345,6 @@ class TrainingApp:
                 self.SQL.add_training_day(week, trainee, task_date.strftime("%m-%d-%y"), filename)
 
         messagebox.showinfo("Success", "Training schedule created from template.")
-
     def create_training_plan(self, date=datetime.now().date()):
         # Clear the main content area
         self.clear_main_content()
@@ -413,32 +392,11 @@ class TrainingApp:
         # Submit button to finalize the training plan
         submit_button = tk.Button(plan_frame, text="Submit", command=lambda: self.submit_training_plan(date))
         submit_button.pack(pady=20)
-
-
     def remove_trainee(self, username, frame):
         # Remove trainee's entry from the dictionary and destroy the frame
         if username in self.task_entries:
             del self.task_entries[username]  # Remove the text entry widget from the dictionary
         frame.destroy()
-
-    # def add_trainee(self, task_entries):
-    #     trainee_name = self.selected_trainee.get()
-    #     if trainee_name and trainee_name not in self.task_entries:
-    #         # Add trainee to the plan (create new entry for the task content)
-    #         trainee_frame = tk.Frame(self.root)
-    #         trainee_frame.pack(fill=tk.X, pady=5)
-
-    #         trainee_label = tk.Label(trainee_frame, text=trainee_name)
-    #         trainee_label.pack(side=tk.LEFT)
-
-    #         task_text = tk.Text(trainee_frame, width=60, height=5)
-    #         task_text.insert(tk.END, "No task assigned.")
-    #         task_text.pack(side=tk.LEFT, padx=10)
-    #         self.task_entries[trainee_name] = task_text
-
-    #         remove_button = tk.Button(trainee_frame, text="-", command=lambda t=trainee_name: self.remove_trainee(t, trainee_frame))
-    #         remove_button.pack(side=tk.RIGHT)
-
     def submit_training_plan(self, date):
         # Collect the data from the task entries and display in the training plans view
         final_plan = ""
@@ -459,9 +417,6 @@ class TrainingApp:
         print(f"Training plan saved as: {file_name}")
 
         self.show_training_plans(date)
-
-
-
     def show_training_calendar(self, trainee_scheduling_data, username):
         employee = self.SQL.get_employee(username)
 
@@ -495,8 +450,6 @@ class TrainingApp:
         # Bind mouse scroll to work with the canvas
         calendar_frame.bind("<Configure>", lambda e: calendar_canvas.config(scrollregion=calendar_canvas.bbox("all")))
         calendar_canvas.bind_all("<MouseWheel>", lambda event: calendar_canvas.yview_scroll(int(-1*(event.delta/120)), "units"))
-
-
     def show_test_calendar_view(self):
         self.clear_main_content()
 
@@ -529,9 +482,6 @@ class TrainingApp:
         # Bind mouse scroll to work with the canvas
         calendar_frame.bind("<Configure>", lambda e: calendar_canvas.config(scrollregion=calendar_canvas.bbox("all")))
         calendar_canvas.bind_all("<MouseWheel>", lambda event: calendar_canvas.yview_scroll(int(-1*(event.delta/120)), "units"))
-
-
-
     def display_trainee_calendar(self, parent, trainee_scheduling_data):
         print('hello')
 
@@ -559,9 +509,6 @@ class TrainingApp:
             for activity in data[1]:
                 activity_label = tk.Label(activity_frame, text=activity, width=14, height=2, relief="flat", wraplength=100, anchor='center')
                 activity_label.pack(side=tk.LEFT, padx=5, pady=1)
-
-
-
     def show_trainee_schedule(self, trainee):
         # Placeholder for pop-up window to show individual trainee's schedule
         messagebox.showinfo("Trainee Schedule", f"Showing training schedule for {trainee[0]}")

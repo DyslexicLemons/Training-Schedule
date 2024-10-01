@@ -29,14 +29,12 @@ class SQLHelper:
         except (Exception, psycopg2.Error) as error:
             print("Error while connecting to PostgreSQL", error)
         
-
     def get_usernames(self):
         # Retrieve the current usernames from the database
         self.cursor.execute("SELECT username FROM employees;")
         # Use a list comprehension to flatten the list of tuples
         return [row[0] for row in self.cursor.fetchall()]
 
-    
     def get_trainees(self):
         self.cursor.execute("SELECT firstname, lastname, username, role FROM employees WHERE trainingstatus = 'Trainee'")
         raw_trainees = self.cursor.fetchall()
@@ -85,9 +83,6 @@ class SQLHelper:
 
         return user
 
-
-    
-
     def remove_employee(self, username):
         try:
             # Delete the employee from the database by username
@@ -121,9 +116,6 @@ class SQLHelper:
             print(f"An error occurred: {e}")
             self.connection.rollback()
 
-
-
-
     def clear_employee_database(self):
         double_check = input("Are you sure you want to clear the database?\n Type 'y' or 'n': ")
         if double_check != 'y':
@@ -140,9 +132,6 @@ class SQLHelper:
 
     def create_training_schedule(self,username):
         pass
-
-
- 
 
     def update_employees(self, json):
         usernames = []
@@ -171,8 +160,6 @@ class SQLHelper:
 
 #                                                              ---TRAINING SCHEDULE REQUESTS START ----
 
-
-    
 
     def add_training_day(self, week_of, username, date, filename):
         try:
@@ -214,7 +201,6 @@ class SQLHelper:
             if self.connection:
                 self.connection.rollback()
 
-    # Add the get_training_schedule_by_username method in your SQLHelper class to retrieve tasks for a trainee.
     def get_training_schedule(self, username):
         self.cursor.execute("""
             SELECT week_of, username, date, filename FROM training_schedule
@@ -257,15 +243,10 @@ class SQLHelper:
 
         return trainees
 
-
-
-
     def quit(self):
         self.cursor.close()
         self.connection.close()
         print("PostgreSQL connection is closed.")
-
-
         
 if __name__ == "__main__":
 

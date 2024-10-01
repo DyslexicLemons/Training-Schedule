@@ -7,7 +7,7 @@ import os
 import Authorization
 import SQLHelper
 
-# TODO Retrieve JSON file from PIE and saves it to the TrainingSchedule folder
+
 def get_pie_data(save=False, test=False):
     """
     Obtains employee schedule data from scfl.pie.iu.edu website.
