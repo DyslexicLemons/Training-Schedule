@@ -68,6 +68,15 @@ def save_file(json_data, BASE_URL, params):
     
     print(f"JSON data has been written to {file_path}")
 
+def work_on_date(username, date, PIEdata):
+    for data in PIEdata:
+        if data['user']['username'] is username:
+            start_time_str = data["startTime"]
+            work_date = datetime.strptime(start_time_str[:10], "%m-%d-%y").date()
+            if date is work_date:
+                return True
+    return False
+                
 
 if __name__ == "__main__":
     save = True

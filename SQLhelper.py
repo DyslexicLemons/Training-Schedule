@@ -39,7 +39,21 @@ class SQLHelper:
     
     def get_trainees(self):
         self.cursor.execute("SELECT firstname, lastname, username, role FROM employees WHERE trainingstatus = 'Trainee'")
-        trainees = self.cursor.fetchall()
+        raw_trainees = self.cursor.fetchall()
+
+        trainees = {}
+
+        for trainee in raw_trainees:
+            username = trainee[2]
+            firstname = trainee[0]
+            lastname = trainee[1]
+            role = trainee[3]
+
+            trainees[username] = {
+                'firstname' : firstname,
+                'lastname' : lastname,
+                'role' : role
+            }
 
         return trainees
     
@@ -49,6 +63,30 @@ class SQLHelper:
 
         self.connection.commit()
         print(f"Employee {username} added successfully")
+
+    def get_employee(self, username):
+        # Use parameterized queries to prevent SQL injection
+        self.cursor.execute("SELECT id, firstname, lastname, username, role, trainingstatus FROM employees WHERE username = %s", (username,))
+        
+        user_data = self.cursor.fetchone()  # Fetch only one record for the given username
+
+        if user_data is None:
+            return None  # Return None if the username doesn't exist
+
+        # Map the fetched data to a dictionary
+        user = {
+            'id': user_data[0],
+            'firstname': user_data[1],
+            'lastname': user_data[2],
+            'username': user_data[3],
+            'role': user_data[4],
+            'trainingstatus': user_data[5]
+        }
+
+        return user
+
+
+    
 
     def remove_employee(self, username):
         try:
@@ -102,6 +140,8 @@ class SQLHelper:
 
     def create_training_schedule(self,username):
         pass
+
+
  
 
     def update_employees(self, json):
@@ -132,14 +172,6 @@ class SQLHelper:
 #                                                              ---TRAINING SCHEDULE REQUESTS START ----
 
 
-
-    def get_todays_training_tasks(self):
-        today_date = "2024-09-20"  # You can get today's date dynamically using datetime
-        self.cursor.execute("""
-            SELECT username, filename FROM training_schedule
-            WHERE date = %s;
-        """, (today_date,))
-        return self.cursor.fetchall()
     
 
     def add_training_day(self, week_of, username, date, filename):
@@ -192,18 +224,39 @@ class SQLHelper:
     
     def get_all_training_schedules(self):
         self.cursor.execute("""
-            SELECT week_of, username, date, filename FROM training_schedule;
+            SELECT week_of, username, date, filename, task FROM training_schedule;
         """)
         return self.cursor.fetchall()
 
-    def get_todays_training_tasks(self):
-        today = datetime.now().date()
+    def get_training_tasks(self, date):
+
+
         self.cursor.execute("""
-            SELECT week_of, username, date, filename 
+            SELECT username, date, filename, task 
             FROM training_schedule 
             WHERE date = %s;
-        """, (today,))
-        return self.cursor.fetchall()
+        """, (date,))
+
+        tasks = self.cursor.fetchall()
+
+        # Create a dictionary to hold tasks for each trainee
+        trainees = {}
+        
+        for task in tasks:
+            username = task[0]
+            task_date = task[1]
+            filename = task[2]
+            task_content = task[3]
+            
+            # Create a dictionary for each trainee to store task info
+            trainees[username] = {
+                'date': task_date,
+                'filename': filename,
+                'task': task_content
+            }
+
+        return trainees
+
 
 
 
@@ -215,6 +268,7 @@ class SQLHelper:
 
         
 if __name__ == "__main__":
+
     SQL = SQLHelper()
     trainees = SQL.get_trainees()
     print(trainees)
