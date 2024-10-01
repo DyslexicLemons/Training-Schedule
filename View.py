@@ -191,7 +191,7 @@ class TrainingApp:
         # update_training_plan_button = tk.Button(plans_frame, text="Update Training Plan")
         # update_training_plan_button.pack(pady=10)
 
-        if content == "No training plan for today":
+        if content == "No training plan available":
                 today = datetime.now().date()
                 create_training_plan_button = tk.Button(plans_frame, text="Create Training Plan", command=lambda: self.create_training_plan(date))
                 create_training_plan_button.pack(pady=10)
@@ -200,11 +200,20 @@ class TrainingApp:
                 edit_training_plan_button.pack(pady=10)
 
 
+        # Convert string back to datetime object
+        current_date = datetime.strptime(date, "%m-%d-%y")
+
+        # Get the date before
+        date_before = (current_date - timedelta(days=1)).strftime("%m-%d-%y")
+
+        # Get the date after
+        date_after = (current_date + timedelta(days=1)).strftime("%m-%d-%y")
+
         # Add buttons to navigate dates (not implemented)
-        prev_day_button = tk.Button(plans_frame, text="< Previous Day")
+        prev_day_button = tk.Button(plans_frame, text="< Previous Day", command = lambda:  self.show_training_plans(date_before))
         prev_day_button.pack(side=tk.LEFT, padx=20)
 
-        next_day_button = tk.Button(plans_frame, text="Next Day >")
+        next_day_button = tk.Button(plans_frame, text="Next Day >", command = lambda:  self.show_training_plans(date_after))
         next_day_button.pack(side=tk.RIGHT, padx=20)
 
 
@@ -357,37 +366,32 @@ class TrainingApp:
 
         messagebox.showinfo("Success", "Training schedule created from template.")
 
-    def create_training_plan(self, date = datetime.now().date()):
+    def create_training_plan(self, date=datetime.now().date()):
         # Clear the main content area
         self.clear_main_content()
 
-    
         # Create a frame to hold the training plan
         plan_frame = tk.Frame(self.root)
         plan_frame.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
 
-
-        task_entries = {}
+        self.task_entries = {}
 
         # Fetch today's training tasks (returns a dictionary with usernames as keys)
         todays_tasks = self.SQL.get_training_tasks(date)
 
-            
         for username, task_info in todays_tasks.items():
-
             trainee = self.SQL.get_employee(username)
             trainee_frame = tk.Frame(plan_frame)
             trainee_frame.pack(fill=tk.X, pady=5)
 
             # Display trainee name
-            trainee_name = trainee['firstname'] + " " + trainee['lastname'] + " " + f'({trainee['username']})'
+            trainee_name = trainee['firstname'] + " " + trainee['lastname'] + f" ({trainee['username']})"
             trainee_label = tk.Label(trainee_frame, text=trainee_name)
             trainee_label.pack(side=tk.LEFT)
 
             # Load the content from the file
             task_filename = task_info['filename']
             file_path = f"TrainingEmailTemplates/{task_filename}"
-            print(file_path)
             try:
                 with open(file_path, 'r') as file:
                     content = file.read()
@@ -399,39 +403,22 @@ class TrainingApp:
             task_text.insert(tk.END, content)
             task_text.pack(side=tk.LEFT, padx=10)
 
-            # Store the text entry widget in a dictionary using the trainee name
-            task_entries[username] = task_text
+            # Store the text entry widget in a dictionary using the trainee username
+            self.task_entries[username] = task_text
 
             # Add a remove button for the trainee
-            remove_button = tk.Button(trainee_frame, text="-", command=lambda t=trainee_name, f=trainee_frame: self.remove_trainee(t, f))
+            remove_button = tk.Button(trainee_frame, text="-", command=lambda u=username, f=trainee_frame: self.remove_trainee(u, f))
             remove_button.pack(side=tk.RIGHT)
 
-        # # Add an "Add trainee" option
-        # add_trainee_frame = tk.Frame(plan_frame)
-        # add_trainee_frame.pack(fill=tk.X, pady=5)
-
-        # add_trainee_label = tk.Label(add_trainee_frame, text="Add Trainee:")
-        # add_trainee_label.pack(side=tk.LEFT)
-
-        # # Create a dropdown menu for adding trainees
-        # trainee_names = [f"{trainee_info['firstname']} {trainee_info['lastname']}" for trainee_info in trainees_list.values()]
-        # self.selected_trainee = tk.StringVar()
-        # trainee_dropdown = ttk.Combobox(add_trainee_frame, textvariable=self.selected_trainee, values=trainee_names)
-        # trainee_dropdown.pack(side=tk.LEFT, padx=10)
-
-        # # Add a button to trigger adding the trainee
-        # add_button = tk.Button(add_trainee_frame, text="Add", command=self.add_trainee)
-        # add_button.pack(side=tk.LEFT)
-
         # Submit button to finalize the training plan
-        submit_button = tk.Button(plan_frame, text="Submit", command=lambda: self.submit_training_plan(task_entries,date))
+        submit_button = tk.Button(plan_frame, text="Submit", command=lambda: self.submit_training_plan(date))
         submit_button.pack(pady=20)
 
 
-    def remove_trainee(self, trainee_name, frame):
+    def remove_trainee(self, username, frame):
         # Remove trainee's entry from the dictionary and destroy the frame
-        if trainee_name in self.task_entries:
-            del self.task_entries[trainee_name]
+        if username in self.task_entries:
+            del self.task_entries[username]  # Remove the text entry widget from the dictionary
         frame.destroy()
 
     # def add_trainee(self, task_entries):
@@ -452,20 +439,23 @@ class TrainingApp:
     #         remove_button = tk.Button(trainee_frame, text="-", command=lambda t=trainee_name: self.remove_trainee(t, trainee_frame))
     #         remove_button.pack(side=tk.RIGHT)
 
-    def submit_training_plan(self, task_entries, date):
+    def submit_training_plan(self, date):
         # Collect the data from the task entries and display in the training plans view
         final_plan = ""
-        for trainee, task_text in task_entries.items():
-            final_plan += f"Trainee: {trainee}\nTask:\n{task_text.get('1.0', tk.END)}\n\n"
+        for username, task_text in self.task_entries.items():
+            try:
+                # Make sure the text widget is still valid before trying to get the content
+                final_plan += f"Trainee: {username}\nTask:\n{task_text.get('1.0', tk.END)}\n\n"
+            except tk.TclError:
+                print(f"Warning: Could not retrieve data for {username}. Text widget has been removed.")
 
-        formatted_date = date.strftime("%m-%d-%y")
-        file_name = f"TP{formatted_date}.html"
+        file_name = f"TP{date}.html"
         file_path = f"TrainingPlans/{file_name}"
 
         # Write content to the file (overwrite if it already exists)
         with open(file_path, 'w') as file:
             file.write(final_plan)
-        
+
         print(f"Training plan saved as: {file_name}")
 
         self.show_training_plans(date)
