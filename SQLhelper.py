@@ -1,6 +1,8 @@
 import psycopg2
 from datetime import datetime
-
+import pandas as pd
+import matplotlib.pyplot as plt
+from sqlalchemy import create_engine
 """
 Tips and tools for using Postgres
 Connect to postgres database: 
@@ -160,6 +162,19 @@ class SQLHelper:
 
 #                                                              ---TRAINING SCHEDULE REQUESTS START ----
 
+    def add_task(self, username, firstname, lastname, task, duration, date):
+        try:
+            # Execute the upsert query (assuming conflict on the username)
+            insert_query = """INSERT INTO tasks (username, firstname, lastname, task, duration, date) VALUES (%s, %s, %s, %s, %s, %s)"""
+            self.cursor.execute(insert_query, (username, firstname, lastname, task, duration, date))
+
+            # Commit the changes
+            self.connection.commit()
+            # print(f"Task for '{username}' added or updated successfully.")
+
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            self.connection.rollback()
 
     def add_training_day(self, week_of, username, date, filename):
         try:
@@ -178,7 +193,87 @@ class SQLHelper:
             # Only rollback if the connection is still open
             if self.connection:
                 self.connection.rollback()
-            
+
+        
+    def visualize_data(self, df, start_date, end_date):
+        if df is not None:
+            # Ensure total_duration is treated as a timedelta
+            df['total_duration'] = pd.to_timedelta(df['total_duration'])
+
+            # Convert total_duration to total hours for easier plotting
+            df['total_hours'] = df['total_duration'].dt.total_seconds() / 3600  # Convert seconds to hours
+
+            # Pivot the DataFrame for visualization
+            pivot_df = df.pivot_table(
+                index=['username', 'firstname', 'lastname'],
+                columns='task',
+                values='total_hours',
+                aggfunc='sum',
+                fill_value=0  # Change to 0 instead of timedelta
+            )
+
+            # Convert start_date and end_date to just date strings
+            start_date_str = pd.to_datetime(start_date).date()
+            end_date_str = pd.to_datetime(end_date).date()
+
+            # Plotting
+            pivot_df.plot(kind='bar', stacked=True, figsize=(12, 6))
+            plt.title(f'Total Duration at Each Task for Each Consultant\nFrom {start_date_str} to {end_date_str}')
+            plt.xlabel('Consultants')
+            plt.ylabel('Total Duration (in hours)')
+            plt.legend(title='Task', bbox_to_anchor=(1.05, 1), loc='upper left')
+            plt.tight_layout()
+            plt.show()
+
+
+    def breakdown_employee_tasks(self, data):
+        # Convert total_duration to hours for easier aggregation
+        data['total_duration'] = data['total_duration'].dt.total_seconds() / 3600  # Convert to hours
+
+        # Group by username and task, then sum total_duration
+        breakdown_df = data.groupby(['username', 'task'])['total_duration'].sum().reset_index()
+
+        # Create a summary report
+        report = {}
+        for _, row in breakdown_df.iterrows():
+            username = row['username']
+            task = row['task']
+            total_time = row['total_duration']
+
+            if username not in report:
+                report[username] = {'Total Time': 0, 'Tasks': {}}
+            report[username]['Total Time'] += total_time
+            report[username]['Tasks'][task] = total_time
+
+        return report
+    
+
+    def display_task_distribution(self, data):
+        # Create a DataFrame from the data
+        df = pd.DataFrame(data)
+
+        # Ensure total_duration is a Timedelta
+        df['total_duration'] = pd.to_timedelta(df['total_duration'])
+
+        # Group by employee and task to get the total duration for each
+        grouped = df.groupby(['firstname', 'lastname', 'task']).agg({'total_duration': 'sum'}).reset_index()
+
+        # Convert total_duration to hours for better readability
+        grouped['total_duration'] = grouped['total_duration'].dt.total_seconds() / 3600  # Convert to hours
+
+        # Create a summary for each employee
+        employee_summary = grouped.groupby(['firstname', 'lastname']).agg({'total_duration': 'sum'}).reset_index()
+
+        # Display employee summary
+        print("Employee Summary:")
+        for _, row in employee_summary.iterrows():
+            print(f"{row['firstname']} {row['lastname']}: {row['total_duration']:.2f} hours")
+
+        # Display detailed task breakdown
+        print("\nDetailed Task Breakdown:")
+        for _, row in grouped.iterrows():
+            print(f"{row['firstname']} {row['lastname']} - Task: {row['task']}, Total Time: {row['total_duration']:.2f} hours")
+  
     def upsert_training_day(self, week_of, username, date, filename):
         try:
             # Upsert the training day into the training_schedule table
@@ -243,17 +338,62 @@ class SQLHelper:
 
         return trainees
 
+    def get_raw_task_data(self):
+        # Query to get the aggregated data
+        query = """
+            SELECT 
+                username, 
+                firstname, 
+                lastname, 
+                task, 
+                EXTRACT(EPOCH FROM duration) / 3600 AS total_duration,  -- Convert to hours
+                date
+            FROM 
+                tasks
+            WHERE
+                task = 'Training'
+            ORDER BY 
+                username, task;
+        """
+        
+        # Read data into a DataFrame
+        df = pd.read_sql_query(query, self.SQLWizard.connection)
+        
+        return df
     def quit(self):
         self.cursor.close()
         self.connection.close()
         print("PostgreSQL connection is closed.")
-        
+    def get_task_usernames(self):
+        # Retrieve the current usernames from the database
+        self.cursor.execute("SELECT username FROM tasks;")
+        # Use a list comprehension to flatten the list of tuples
+        return [row[0] for row in self.cursor.fetchall()]
+    def insert_role_data(self, data):
+        for user in data:
+            username = user["username"]
+            for assignment in user["scheduledUserMasks"]:
+                role = assignment['mask']['name']
+                if role in ('Computer Assistant', 'Computer Coordinator', 'PA'):
+                    start_date = assignment['startTime']
+                    end_date = assignment['endTime']
+                    insert_query = """INSERT INTO user_roles (username, role, startDate, endDate) VALUES (%s, %s, %s, %s)"""
+                    self.cursor.execute(insert_query, (username, role, start_date, end_date))
+
+                    self.connection.commit()
+                    print(f"Employee {username} with role {role} added successfully")
+
+                
+
+
+
+
+
 if __name__ == "__main__":
 
     SQL = SQLHelper()
-    trainees = SQL.get_trainees()
-    print(trainees)
-    Training_schedule = SQL.get_training_schedule('Scott')
-    print(Training_schedule)
+    table_name = 'tasks'
+    file_name = 'Garrettreport.xlsx'
+    SQL.export_to_excel(table_name, file_name)
     SQL.quit()
 
