@@ -10,25 +10,24 @@ from sqlalchemy import create_engine
 class TaskDistributionApp:
     def __init__(self):
         self.SQLWizard = SQLHelper.SQLHelper()
-        self.data = self.fetch_data()
-        self.root = tk.Tk()
-        self.root.title("Employee Task Distribution")
+        # self.root = tk.Tk()
+        # self.root.title("Employee Task Distribution")
 
 
-        # Task selection
-        self.selected_tasks = tk.StringVar(value="All")
-        self.tasks = self.get_unique_tasks()
-        self.dropdown = ttk.Combobox(self.root, textvariable=self.selected_tasks, values=["All"] + self.tasks, state='normal')
-        self.dropdown.pack(pady=10)
+        # # Task selection
+        # self.selected_tasks = tk.StringVar(value="All")
+        # self.tasks = self.get_unique_tasks()
+        # self.dropdown = ttk.Combobox(self.root, textvariable=self.selected_tasks, values=["All"] + self.tasks, state='normal')
+        # self.dropdown.pack(pady=10)
 
-        # Button to generate report
-        self.report_button = tk.Button(self.root, text="Generate Report", command=self.show_report)
-        self.report_button.pack(pady=5)
+        # # Button to generate report
+        # self.report_button = tk.Button(self.root, text="Generate Report", command=self.show_report)
+        # self.report_button.pack(pady=5)
 
-        self.report_text = tk.Text(self.root, wrap=tk.WORD, width=50, height=20)
-        self.report_text.pack(pady=10)
+        # self.report_text = tk.Text(self.root, wrap=tk.WORD, width=50, height=20)
+        # self.report_text.pack(pady=10)
 
-        self.root.mainloop()
+        # self.root.mainloop()
 
     def fetch_data(self):
         # Establish connection to the PostgreSQL database
@@ -86,9 +85,8 @@ class TaskDistributionApp:
 
 if __name__ == "__main__":
     app = TaskDistributionApp()
-    file_name = 'Garrettreport.xlsx'
+    file_name = 'task_summary.xlsx'
     data = app.SQLWizard.get_raw_task_data()
     app.export_to_excel(data, file_name)
-    # # Get today's date
-    end_date = datetime.now()
+
 

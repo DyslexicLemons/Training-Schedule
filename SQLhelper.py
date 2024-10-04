@@ -165,13 +165,24 @@ class SQLHelper:
     def add_task(self, username, firstname, lastname, task, duration, date):
         try:
             # Execute the upsert query (assuming conflict on the username)
-            insert_query = """INSERT INTO tasks (username, firstname, lastname, task, duration, date) VALUES (%s, %s, %s, %s, %s, %s)"""
+            insert_query = """INSERT INTO tasks2 (username, firstname, lastname, task, duration, date) VALUES (%s, %s, %s, %s, %s, %s)"""
             self.cursor.execute(insert_query, (username, firstname, lastname, task, duration, date))
 
             # Commit the changes
             self.connection.commit()
             # print(f"Task for '{username}' added or updated successfully.")
 
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            self.connection.rollback()
+
+    def add_tasks(self, tasks):
+        try:
+            insert_query = """INSERT INTO tasks2 (username, firstname, lastname, task, duration, date) 
+                              VALUES (%s, %s, %s, %s, %s, %s) """
+            self.cursor.executemany(insert_query, tasks)
+            self.connection.commit()
+            # print(f"{len(tasks)} tasks added or updated successfully.")
         except Exception as e:
             print(f"An error occurred: {e}")
             self.connection.rollback()
@@ -345,19 +356,17 @@ class SQLHelper:
                 username, 
                 firstname, 
                 lastname, 
-                task, 
-                EXTRACT(EPOCH FROM duration) / 3600 AS total_duration,  -- Convert to hours
-                date
+                total_duration,
+                date,
+                role
             FROM 
-                tasks
-            WHERE
-                task = 'Training'
+                tasks_summary
             ORDER BY 
-                username, task;
+                username;
         """
         
         # Read data into a DataFrame
-        df = pd.read_sql_query(query, self.SQLWizard.connection)
+        df = pd.read_sql_query(query, self.connection)
         
         return df
     def quit(self):
@@ -384,8 +393,41 @@ class SQLHelper:
                     print(f"Employee {username} with role {role} added successfully")
 
                 
+    def update_task_table_roles(self):
+        update_query = """
+        UPDATE tasks2 t
+        SET role = ur.role
+        FROM user_roles ur
+        WHERE t.username = ur.username
+        AND (
+            -- Task date is between startdate and enddate
+            (t.date >= ur.startdate AND t.date <= ur.enddate)
+            OR
+            -- Task date is after startdate and enddate is null
+            (t.date >= ur.startdate AND ur.enddate IS NULL)
+        );
+        """
+        self.cursor.execute(update_query)
+        self.connection.commit()
 
+    def create_task_summary_table(self):
+        query = """
+            INSERT INTO tasks_summary (username, firstname, lastname, total_duration, date, role)
+            SELECT 
+                username, 
+                firstname, 
+                lastname, 
+                SUM(EXTRACT(EPOCH FROM duration) / 3600) AS total_duration,  -- Convert to hours
+                date,
+                role
+            FROM 
+                tasks2
+            GROUP BY 
+                username, firstname, lastname, date, role;
 
+            """
+        self.cursor.execute(query)
+        self.connection.commit()
 
 
 

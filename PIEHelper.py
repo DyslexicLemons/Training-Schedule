@@ -1,13 +1,24 @@
 import requests                                 # Http request library for python
+import logging
+import time
 import json
+import threading
 import psycopg2                                 # PostgreSQL library for Python
 from datetime import datetime, timedelta
+from concurrent.futures import ThreadPoolExecutor
 import socket
 import os
 import Authorization
 import SQLHelper
 import pandas as pd
+from pytz import timezone
+import orjson
 
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+eastern_tz = timezone('America/New_York')
+
+SQL = SQLHelper.SQLHelper()
 
 def get_pie_data(save=False, test=False, date=datetime.now().strftime('%Y-%m-%d') ):
     """
@@ -31,10 +42,10 @@ def get_pie_data(save=False, test=False, date=datetime.now().strftime('%Y-%m-%d'
     headers = Authorization.get_token(test)
     folder = "PIEJSONS"
 
-    print("Submitting HTTP Request...")
+    logging.info("Submitting HTTP Request...")
     http_response = requests.get(BASE_URL,headers=headers,params=params)
     http_response.raise_for_status()
-    print("HTTP Request submitted with return code: " + str(http_response.status_code))
+    logging.info(f"HTTP Request submitted with return code: {http_response.status_code}")
 
     if save:
         save_file(http_response.json(), BASE_URL, params, folder)
@@ -112,17 +123,84 @@ def work_on_date(username, date, PIEdata):
                 return True
     return False
 
+def get_shift_data_from_files(start_date, end_date):
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        temp_date = start_date
+        futures = []
+        while temp_date < end_date:
+            formatted_date = temp_date.strftime('%m-%d-%y')
+            logging.info(f"Adding shifts for week of {formatted_date}")
+            futures.append(executor.submit(process_weekly_shifts, formatted_date))
+            temp_date += timedelta(days=7)
+
+        # Wait for all futures to complete
+        for future in futures:
+            future.result()  # This will raise any exceptions that occurred in the thread
+
+
+def process_weekly_shifts(formatted_date):
+    json_data = read_file(formatted_date)
+    total_accepted_shifts = 0
+
+    if json_data:
+        total_accepted_shifts = process_shifts(json_data, SQL)
+    else:
+        logging.warning(f"No data for {formatted_date}")
+
+    logging.info(f"Shifts added for week of {formatted_date} with {total_accepted_shifts} accepted shifts.\n")
+
+
+def process_shifts(json_data, SQL):
+    shifts_to_insert = []
+    total_failed_shifts = 0  # Counter for failed shifts
+
+    for shift in json_data:
+        try:
+            shift_data = extract_shift_data(shift)
+            shifts_to_insert.append(shift_data)
+        except (KeyError, TypeError) as e:
+            total_failed_shifts += 1  # Increment the counter on failure
+            continue
+
+    if shifts_to_insert:
+        SQL.add_tasks(shifts_to_insert)
+
+    # Log the total number of failed shifts for this data package
+    if total_failed_shifts > 0:
+        logging.warning(f"Total failed shifts for the current data package: {total_failed_shifts}")
+
+
+    return len(shifts_to_insert)
+
+def extract_shift_data(shift):
+    shift_group = shift["shiftGroup"]
+    user = shift["user"]
+    task = shift_group["shiftType"]["name"]
+    
+    if task == "Training In Office":
+        task = "Training"
+
+    # Directly returning a tuple of values
+    return (
+        user["username"],
+        user["firstName"],
+        user["lastName"],
+        task,
+        shift["duration"]["difference"],
+        datetime.fromisoformat(shift["startTime"]).astimezone(eastern_tz).date()
+    )
+
 def get_shift_data(start_date, end_date):
     temp_date = start_date
     SQL = SQLHelper.SQLHelper()
-    total_rejected_shifts = 0
+
     total_accepted_shifts = 0
 
     while temp_date < end_date:
         formatted_date = temp_date.strftime('%Y-%m-%d')
         
         json_data = get_pie_data(save=True, test=True, date=formatted_date)  # Renamed 'json' to 'json_data'
-        print("Adding shifts for week of " + formatted_date)
+        logging.info(f"Adding shifts for week of  {formatted_date}")
         for shift in json_data:  # each item in the JSON describes a shift
             # Check if required information is available
             try:
@@ -147,25 +225,57 @@ def get_shift_data(start_date, end_date):
                 total_rejected_shifts+=1
                 continue  # Skip this shift if any required information is missing
 
-        print("Shifts added for week of " + formatted_date)
-        print("Accepted shifts = " + str(total_accepted_shifts))
-        print("Rejected shifts = " + str(total_rejected_shifts))
+        logging.info("Shifts added for week of {formatted_date}")
+        logging.info("Accepted shifts = {total_accepted_shifts}")
+        logging.info("Rejected shifts = {total_rejected_shifts}")
         total_rejected_shifts = 0
         total_accepted_shifts = 0
 
         temp_date += timedelta(days=7)
 
+def get_shift_date(start_datetime,end_datetime):
 
+    # Extract the date from the start time
+    start_date = start_datetime.date()
 
-                
+    # Check if end time is within one hour of midnight and if the date differs
+    if end_datetime.date() != start_date and end_datetime.time() <= datetime.strptime('01:00:00', '%H:%M:%S').time():
+        # If it crosses midnight within an hour, use the start date
+        return start_date
+    else:
+        # Otherwise, use the date from the end time
+        return end_datetime.date()
+
+def read_file(date):
+    folder_path = 'PIEJSONS'
+    filename = date + '_10-03-24.json'
+    file_path = os.path.join(folder_path, filename)
+    
+    if not os.path.isfile(file_path):
+        logging.info(f"File {file_path} does not exist.")
+        return None
+    
+    # Using orjson to read the JSON file
+    with open(file_path, 'rb') as file:  # Note the 'rb' mode for binary reading
+        try:
+            content = orjson.loads(file.read())
+            return content.get('data', [])
+        except Exception as e:
+            logging.info(f"Error reading JSON: {e}")
+            return None
+
 
 if __name__ == "__main__":
+    start_time = time.time()  # Start time tracking
     save = True
     test = True
-    SQLWizard = SQLHelper.SQLHelper()
-    role_data = get_role_data(save,test)
-    SQLWizard.insert_role_data(role_data)
+    start_date = datetime(2022, 1, 6)
+    end_date = datetime(2024, 9, 1)
+    get_shift_data_from_files(start_date, end_date)
+    end_time = time.time()  # End time tracking
 
+    elapsed_time = end_time - start_time
+    logging.info(f"Total runtime: {elapsed_time:.2f} seconds")
 
 
     # # Call the get_shift_data function with the specified dates and inserted into "tasks" database
