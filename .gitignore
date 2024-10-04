@@ -12,3 +12,9 @@ venv/
 
 # Ignore all files in the /secrets directory
 secrets/
+
+# Ignore all files in the PIEJSONS/ directory
+PIEJSONS/
+
+# Ignore all files in the RoleJSONS/ directory
+RoleJSONS/
